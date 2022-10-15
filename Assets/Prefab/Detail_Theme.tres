@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Fonts/English_T.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/Fonts/Urdu.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Resources/Fonts/Quran.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Resources/Fonts/English_T.otf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+use_filter = true
+extra_spacing_char = -2
+extra_spacing_space = 10
+font_data = ExtResource( 4 )
+fallback/0 = ExtResource( 3 )
+fallback/1 = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[resource]
+Label/colors/font_color = Color( 0.0745098, 0.105882, 0.164706, 1 )
+Label/fonts/font = SubResource( 2 )
+RichTextLabel/colors/default_color = Color( 0.0745098, 0.105882, 0.164706, 1 )
+RichTextLabel/fonts/normal_font = SubResource( 1 )
