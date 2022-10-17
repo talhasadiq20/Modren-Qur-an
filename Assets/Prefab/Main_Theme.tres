@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=8 format=2]
 
 [ext_resource path="res://Resources/Fonts/English_H.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://Resources/Fonts/English_T.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Resources/Fonts/English_T.otf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=6]
 size = 20
@@ -14,13 +14,13 @@ font_data = ExtResource( 1 )
 use_filter = true
 extra_spacing_char = 1
 extra_spacing_space = 1
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
 use_filter = true
 extra_spacing_char = 1
 font_data = ExtResource( 1 )
-fallback/0 = ExtResource( 2 )
+fallback/0 = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.168627, 0.176471, 0.313726, 1 )

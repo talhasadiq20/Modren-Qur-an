@@ -12,7 +12,7 @@ config_version=4
 
 config/name="Modren Qur'an"
 run/main_scene="res://Assets/Screens/Home_screen.tscn"
-boot_splash/image="res://Icon.svg"
+boot_splash/bg_color=Color( 0.168627, 0.176471, 0.313726, 1 )
 config/icon="res://Icon.svg"
 
 [autoload]
@@ -26,10 +26,11 @@ gdscript/completion/autocomplete_setters_and_getters=true
 
 [display]
 
-window/size/width=600
-window/size/height=1024
-window/size/test_width=400
-window/size/test_height=680
+window/size/width=1080
+window/size/height=2280
+window/size/always_on_top=true
+window/size/test_width=360
+window/size/test_height=760
 window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"

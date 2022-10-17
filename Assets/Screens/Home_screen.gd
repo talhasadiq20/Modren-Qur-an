@@ -1,5 +1,6 @@
 extends Control
 
+export(String,FILE) var Next_Scene:String
 
 func _ready():
-	SceneLoader.Load_Scene("res://tester.tscn",self)
+	SceneLoader.Load_Scene(Next_Scene,self)
