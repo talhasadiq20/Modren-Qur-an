@@ -1,6 +1,5 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=8 format=2]
 
-[ext_resource path="res://Resources/Fonts/English_T.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Resources/Fonts/Urdu.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Resources/Fonts/Quran.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Resources/Fonts/English_T.otf" type="DynamicFontData" id=4]
@@ -17,10 +16,6 @@ extra_spacing_space = 10
 font_data = ExtResource( 4 )
 fallback/0 = ExtResource( 3 )
 fallback/1 = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=1]
-size = 30
-font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.313726, 0.282353, 0.439216, 1 )
@@ -49,8 +44,6 @@ expand_margin_bottom = 1.0
 [resource]
 Label/colors/font_color = Color( 0.0745098, 0.105882, 0.164706, 1 )
 Label/fonts/font = SubResource( 2 )
-RichTextLabel/colors/default_color = Color( 0.0745098, 0.105882, 0.164706, 1 )
-RichTextLabel/fonts/normal_font = SubResource( 1 )
 VScrollBar/styles/grabber = SubResource( 3 )
 VScrollBar/styles/grabber_highlight = SubResource( 4 )
 VScrollBar/styles/grabber_pressed = SubResource( 5 )
