@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Resources/UI/Long_Rec_Base.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Assets/Prefab/ScrollContainer.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Prefab/BackButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Prefab/MenuButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Prefab/NameMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Prefab/MenuButton_Allahs_Name.gd" type="Script" id=10]
 
 [node name="M_Word_Detail" type="Control"]
 anchor_right = 1.0
@@ -303,9 +305,13 @@ anchor_top = 0.05
 anchor_right = 0.05
 anchor_bottom = 0.05
 
+[node name="NameMenu" parent="." instance=ExtResource( 9 )]
+
 [node name="MenuButton" parent="." instance=ExtResource( 8 )]
 anchor_left = 0.85
 anchor_top = 0.05
 anchor_right = 0.85
 anchor_bottom = 0.05
-Text = "Menu"
+script = ExtResource( 10 )
+
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_MenuButton_pressed"]

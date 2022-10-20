@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Prefab/Arabic_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Resources/Fonts/Quran.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Resources/UI/Seleted_Name.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Prefab/Menu_Button_Names.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_color = Color( 0.0745098, 0.105882, 0.164706, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="NameButton" type="TextureRect"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 280.0
+margin_bottom = 200.0
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -35.0
+margin_right = 87.0
+margin_bottom = 38.0
+
+[node name="Name_Lable" type="Label" parent="."]
+self_modulate = Color( 0.0745098, 0.105882, 0.164706, 1 )
+anchor_right = 0.9
+anchor_bottom = 0.8
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ﻪِﻠَّﻟﭐ ﻢِﺴْﺑِ"
+align = 2
+valign = 1
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_button_down"]

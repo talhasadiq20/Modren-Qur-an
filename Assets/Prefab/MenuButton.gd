@@ -10,6 +10,7 @@ func _ready():
 func _on_pressed():
 	if !Clicked:
 		$AnimationPlayer.play("Clicked")
+		
 	else:
 		$AnimationPlayer.play_backwards("Clicked")
 	Clicked = !Clicked
