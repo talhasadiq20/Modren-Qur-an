@@ -38,7 +38,7 @@ func _process(_delta):
 		Bottom_Arrow.disabled = true
 
 func Focus(val:int) ->void:
-	scroll_vertical = (val-1) * 90
+	scroll_vertical = (val-1) * 160
 
 func Make_Names() ->void:
 	Names_Node.resize(99)
@@ -54,4 +54,3 @@ func Make_Names() ->void:
 func Select_Name(val:int) ->void:
 	Names_Node[Selected_Name-1].UnSelected()
 	Selected_Name = val
-	Focus(Selected_Name)

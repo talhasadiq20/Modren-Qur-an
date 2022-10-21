@@ -18,6 +18,7 @@ font_data = ExtResource( 9 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "Show"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
@@ -66,6 +67,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect/Selected_Name:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect/Details:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="NameMenu" type="Control"]
 visible = false
@@ -74,7 +99,6 @@ anchor_bottom = 1.0
 script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.0745098, 0.105882, 0.164706, 1 )
@@ -137,9 +161,9 @@ valign = 2
 autowrap = true
 
 [node name="Names_Area" type="TextureRect" parent="."]
-anchor_left = 2.0
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 2.0
+anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -296.0
 margin_top = -800.0

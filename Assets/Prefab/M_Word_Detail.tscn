@@ -313,5 +313,6 @@ anchor_top = 0.05
 anchor_right = 0.85
 anchor_bottom = 0.05
 script = ExtResource( 10 )
+Text = "Name"
 
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_MenuButton_pressed"]
