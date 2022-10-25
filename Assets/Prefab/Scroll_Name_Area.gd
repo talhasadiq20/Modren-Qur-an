@@ -5,9 +5,10 @@ export(PackedScene) var Names_PC:PackedScene
 onready var Top_Arrow: = $"%Top_Arrow"
 onready var Bottom_Arrow: = $"%Bottom_Arrow"
 onready var Name_Area: = $"%Names_Contaner"
+onready var Parent: = $"../.."
 
 var Current_Scroll:int = 0
-var Selected_Name:int = 13
+var Selected_Name:int = 0
 var Names_Node:Array = []
 
 func _ready():
@@ -16,7 +17,7 @@ func _ready():
 
 func _on_Top_Arrow_button_down():
 # warning-ignore:narrowing_conversion
-	scroll_vertical -= min(90,scroll_vertical)
+	scroll_vertical -= min(120,scroll_vertical)
 func _on_Bottom_Arrow_pressed():
 	scroll_vertical += 90
 
@@ -41,16 +42,24 @@ func Focus(val:int) ->void:
 	scroll_vertical = (val-1) * 160
 
 func Make_Names() ->void:
+	var Names_lib: = Allahs_Name.new()
 	Names_Node.resize(99)
-	for i in range(1,100):
+	for i in range(99):
 		var scene = Names_PC.instance()
 		Name_Area.add_child(scene)
 		if i == Selected_Name:
 			scene.Selected()
 		scene.Number = i
-		scene.Name = "ﻪِﻠَّﻟﭐ ﻢِﺴْﺑِ"
-		Names_Node[i-1]=scene
+		Names_lib.Select_Name(i)
+		scene.Name = Names_lib.Get_Selected_Arabic_Name()
+		scene.Detail = Names_lib.Get_Selected_Detail()
+		scene.Meaning = Names_lib.Get_Selected_Meaning()
+		scene.Arbic2Lang = Names_lib.Get_Selected_Name()
+# warning-ignore:return_value_discarded
+		scene.connect("new_Selection",Parent,"New_Selection")
+		Names_Node[i] = scene
+	Names_lib.queue_free()
 
 func Select_Name(val:int) ->void:
-	Names_Node[Selected_Name-1].UnSelected()
+	Names_Node[Selected_Name].UnSelected()
 	Selected_Name = val

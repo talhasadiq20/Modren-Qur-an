@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Allahs_Name",
+"language": "GDScript",
+"path": "res://Assets/Qur'an/Names/Names.gd"
+} ]
+_global_script_class_icons={
+"Allahs_Name": ""
+}
+
 [application]
 
 config/name="Modren Qur'an"

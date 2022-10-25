@@ -14,3 +14,5 @@ func Get_Current_Language()->String:
 		lang.ur:
 			return "ur"
 	return "en"
+
+func Get_Arabic() ->String: return "Arabic_Name"

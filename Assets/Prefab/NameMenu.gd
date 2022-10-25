@@ -1,5 +1,16 @@
 extends Control
 
+onready var Arabic_Name: = $"%ArabicLabel"
+onready var Arabic2Lang: = $"%Ar-Eng"
+onready var Meaning: = $"%Short_Trans"
+onready var Anim: = $AnimationPlayer
+
+var Playing_in_reverse:bool = false
+var Current_Arabic_Name:String = ""
+var Current_Arabic2Lang:String = ""
+var Current_Meaning:String = ""
+var Current_Detail:String = ""
+
 var Showing:bool = false setget set_showing,get_showing
 
 func set_showing(val:bool) ->void:
@@ -13,3 +24,21 @@ func set_showing(val:bool) ->void:
 
 func get_showing()->bool:
 	return Showing
+
+func New_Selection(_name,_arbic2Lang,_meaning,_detail)->void:
+	Anim.play("New_Name_Display")
+	Current_Arabic_Name = _name
+	Current_Arabic2Lang = _arbic2Lang
+	Current_Meaning = _meaning
+	Current_Detail = _detail
+
+func _on_animation_finished(anim_name):
+	match anim_name:
+		"New_Name_Display":
+			Arabic_Name.text = Current_Arabic_Name
+			Arabic2Lang.text = Current_Arabic2Lang
+			Meaning.text = Current_Meaning
+			if !Playing_in_reverse:
+				Anim.play_backwards("New_Name_Display")
+				Playing_in_reverse = true
+			else: Playing_in_reverse = false
