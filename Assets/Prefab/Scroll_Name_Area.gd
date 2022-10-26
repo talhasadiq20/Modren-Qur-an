@@ -12,14 +12,16 @@ var Selected_Name:int = 0
 var Names_Node:Array = []
 
 func _ready():
+	Selected_Name = Save.Reading_Allah_Name
 	Make_Names()
+	Select_Name(Selected_Name)
 	Focus(Selected_Name)
 
 func _on_Top_Arrow_button_down():
 # warning-ignore:narrowing_conversion
 	scroll_vertical -= min(120,scroll_vertical)
 func _on_Bottom_Arrow_pressed():
-	scroll_vertical += 90
+	scroll_vertical += 120
 
 func _process(_delta):
 	if scroll_vertical == Current_Scroll:
@@ -47,16 +49,18 @@ func Make_Names() ->void:
 	for i in range(99):
 		var scene = Names_PC.instance()
 		Name_Area.add_child(scene)
-		if i == Selected_Name:
-			scene.Selected()
-		scene.Number = i
+		
 		Names_lib.Select_Name(i)
+		scene.Number = i
 		scene.Name = Names_lib.Get_Selected_Arabic_Name()
 		scene.Detail = Names_lib.Get_Selected_Detail()
 		scene.Meaning = Names_lib.Get_Selected_Meaning()
 		scene.Arbic2Lang = Names_lib.Get_Selected_Name()
-# warning-ignore:return_value_discarded
+		
 		scene.connect("new_Selection",Parent,"New_Selection")
+		if i == Selected_Name:
+			scene.Selected()
+# warning-ignore:return_value_discarded
 		Names_Node[i] = scene
 	Names_lib.queue_free()
 

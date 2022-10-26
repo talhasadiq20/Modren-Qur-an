@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Resources/UI/Long_Rec_Base.png" type="Texture" id=2]
@@ -10,11 +10,45 @@
 [ext_resource path="res://Assets/Prefab/MenuButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Prefab/NameMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Prefab/MenuButton_Allahs_Name.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Prefab/Name_Details.gd" type="Script" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Load"
+length = 0.25
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="M_Word_Detail" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 11 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -48,228 +82,53 @@ script = ExtResource( 6 )
 Scroll_Limit = 600
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Detail_Area/ScrollContainer"]
-margin_right = 1068.0
-margin_bottom = 4022.0
+margin_right = 1080.0
+margin_bottom = 1564.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="p" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
+[node name="H2" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_right = 1068.0
-margin_bottom = 179.0
+margin_right = 1080.0
+margin_bottom = 88.0
 theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
+text = "In the Name of Allah"
 autowrap = true
 
-[node name="p2" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
+[node name="H3" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 183.0
-margin_right = 1068.0
-margin_bottom = 362.0
+margin_top = 92.0
+margin_right = 1080.0
+margin_bottom = 271.0
 theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
+text = "The Most Compassionate, Most Merciful."
 autowrap = true
 
-[node name="p3" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 366.0
-margin_right = 1068.0
-margin_bottom = 545.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
+[node name="ColorRect" type="ColorRect" parent="Detail_Area/ScrollContainer/VBoxContainer/H3"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_right = 10.0
+margin_bottom = 7.0
+color = Color( 0.819608, 0.890196, 0.929412, 0.462745 )
 
-[node name="p4" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 549.0
-margin_right = 1068.0
-margin_bottom = 728.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
+[node name="ColorRect2" type="ColorRect" parent="Detail_Area/ScrollContainer/VBoxContainer/H3/ColorRect"]
+show_behind_parent = true
+anchor_top = -1.0
+anchor_right = 1.0
+anchor_bottom = 2.0
+color = Color( 0.07, 0.11, 0.16, 0.2 )
 
-[node name="p5" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
+[node name="P" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 732.0
-margin_right = 1068.0
-margin_bottom = 911.0
+margin_top = 275.0
+margin_right = 1080.0
+margin_bottom = 454.0
 theme = ExtResource( 5 )
 text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p6" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 915.0
-margin_right = 1068.0
-margin_bottom = 1094.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p7" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 1098.0
-margin_right = 1068.0
-margin_bottom = 1277.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p8" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 1281.0
-margin_right = 1068.0
-margin_bottom = 1460.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p9" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 1464.0
-margin_right = 1068.0
-margin_bottom = 1643.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p10" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 1647.0
-margin_right = 1068.0
-margin_bottom = 1826.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p11" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 1830.0
-margin_right = 1068.0
-margin_bottom = 2009.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p12" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 2013.0
-margin_right = 1068.0
-margin_bottom = 2192.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p13" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 2196.0
-margin_right = 1068.0
-margin_bottom = 2375.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p14" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 2379.0
-margin_right = 1068.0
-margin_bottom = 2558.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p15" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 2562.0
-margin_right = 1068.0
-margin_bottom = 2741.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p16" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 2745.0
-margin_right = 1068.0
-margin_bottom = 2924.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p17" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 2928.0
-margin_right = 1068.0
-margin_bottom = 3107.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p18" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 3111.0
-margin_right = 1068.0
-margin_bottom = 3290.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p19" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 3294.0
-margin_right = 1068.0
-margin_bottom = 3473.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p20" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 3477.0
-margin_right = 1068.0
-margin_bottom = 3656.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p21" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 3660.0
-margin_right = 1068.0
-margin_bottom = 3839.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
-autowrap = true
-
-[node name="p22" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_top = 3843.0
-margin_right = 1068.0
-margin_bottom = 4022.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 1
+align = 3
+valign = 3
 autowrap = true
 
 [node name="Name_area" type="TextureRect" parent="."]
@@ -316,4 +175,10 @@ anchor_bottom = 0.05
 script = ExtResource( 10 )
 Text = "Name"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Load"
+anims/Load = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[connection signal="New_Name" from="NameMenu" to="." method="_on_New_Name"]
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_MenuButton_pressed"]

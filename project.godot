@@ -22,6 +22,7 @@ _global_script_class_icons={
 
 config/name="Modren Qur'an"
 run/main_scene="res://Assets/Screens/Home_screen.tscn"
+config/use_custom_user_dir=true
 boot_splash/bg_color=Color( 0.168627, 0.176471, 0.313726, 1 )
 config/icon="res://Icon.svg"
 
@@ -29,6 +30,7 @@ config/icon="res://Icon.svg"
 
 GlobleSettings="*res://Assets/Globle/Globle_Settings.gd"
 SceneLoader="*res://Assets/Globle/SceneLoader.gd"
+Save="*res://Assets/Globle/Save.gd"
 
 [debug]
 

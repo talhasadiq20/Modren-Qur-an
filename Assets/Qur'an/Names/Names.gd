@@ -23,6 +23,21 @@ var Names:Dictionary = {
 			"en":"",
 			"ur":""
 		}
+	},
+	1:{
+		"Arabic_Name":"ٱلْرَّحِيْمُ",
+		"Name":{
+			"en":"Ar-Raheem",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Bestower of Mercy",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		}
 	}
 }
 #2	ٱلْرَّحِيْمُ	AR-RAHEEM	The Bestower of Mercy
