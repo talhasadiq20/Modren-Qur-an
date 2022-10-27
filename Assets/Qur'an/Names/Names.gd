@@ -8,11 +8,703 @@ func Get_Selected_Name() ->String: return Selected_Name["Name"][GlobleSettings.G
 func Get_Selected_Meaning() ->String: return Selected_Name["Meaning"][GlobleSettings.Get_Current_Language()]
 func Get_Selected_Detail() ->String: return Selected_Name["Detail"][GlobleSettings.Get_Current_Language()]
 
+func get_all() -> Dictionary: return Names
+
 var Names:Dictionary = {
-	0:{
-		"Arabic_Name":"ﻥُﺎـﻤَﺣْﺮَّﻟْﭐ",
+			0:{
+		"Arabic_Name": "ٱلْرَّحْمَـانُ",
 		"Name":{
-			"en":"Ar-Rahman",
+			"en":"Ar-Rahmaan",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Most Or Entirely Merciful",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	1:{
+		"Arabic_Name": "ٱلْرَّحِيْمُ",
+		"Name":{
+			"en":"Ar-Raheem",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Bestower Of Mercy",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	2:{
+		"Arabic_Name": "ٱلْمَلِكُ",
+		"Name":{
+			"en":"Al-Malik",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The King And Owner Of Dominion",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	3:{
+		"Arabic_Name": "ٱلْقُدُّوسُ",
+		"Name":{
+			"en":"Al-Quddus",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Absolutely Pure",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	4:{
+		"Arabic_Name": "ٱلْسَّلَامُ",
+		"Name":{
+			"en":"As-Salam",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Perfection And Giver Of Peace",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	5:{
+		"Arabic_Name": "ٱلْمُؤْمِنُ",
+		"Name":{
+			"en":"Al-Mu’Min",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The One Who Gives Emaan And Security",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	6:{
+		"Arabic_Name": "ٱلْمُهَيْمِنُ",
+		"Name":{
+			"en":"Al-Muhaymin",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Guardian, The Witness, The Overseer",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	7:{
+		"Arabic_Name": "ٱلْعَزِيزُ",
+		"Name":{
+			"en":"Al-Azeez",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All Mighty",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	8:{
+		"Arabic_Name": "ٱلْجَبَّارُ",
+		"Name":{
+			"en":"Al-Jabbar",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Compeller, The Restorer",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	9:{
+		"Arabic_Name": "ٱلْمُتَكَبِّرُ",
+		"Name":{
+			"en":"Al-Mutakabbir",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Supreme, The Majestic",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	10:{
+		"Arabic_Name": "ٱلْخَالِقُ",
+		"Name":{
+			"en":"Al-Khaaliq",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Creator, The Maker",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	11:{
+		"Arabic_Name": "ٱلْبَارِئُ",
+		"Name":{
+			"en":"Al-Baari’",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Originator",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	12:{
+		"Arabic_Name": "ٱلْمُصَوِّرُ",
+		"Name":{
+			"en":"Al-Musawwir",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Fashioner",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	13:{
+		"Arabic_Name": "ٱلْغَفَّارُ",
+		"Name":{
+			"en":"Al-Ghaffar",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All- And Oft-Forgiving",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	14:{
+		"Arabic_Name": "ٱلْقَهَّارُ",
+		"Name":{
+			"en":"Al-Qahhar",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Subduer, The Ever-Dominating",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	15:{
+		"Arabic_Name": "ٱلْوَهَّابُ",
+		"Name":{
+			"en":"Al-Wahhaab",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Giver Of Gifts",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	16:{
+		"Arabic_Name": "ٱلْرَّزَّاقُ",
+		"Name":{
+			"en":"Ar-Razzaaq",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Provider",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	17:{
+		"Arabic_Name": "ٱلْفَتَّاحُ",
+		"Name":{
+			"en":"Al-Fattaah",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Opener, The Judge",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	18:{
+		"Arabic_Name": "ٱلْعَلِيمُ",
+		"Name":{
+			"en":"Al-‘Aleem",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All-Knowing, The Omniscient",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	19:{
+		"Arabic_Name": "ٱلْقَابِضُ",
+		"Name":{
+			"en":"Al-Qaabid",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Withholder",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	20:{
+		"Arabic_Name": "ٱلْبَاسِطُ",
+		"Name":{
+			"en":"Al-Baasit",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Extender",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	21:{
+		"Arabic_Name": "ٱلْخَافِضُ",
+		"Name":{
+			"en":"Al-Khaafidh",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Reducer, The Abaser",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	22:{
+		"Arabic_Name": "ٱلْرَّافِعُ",
+		"Name":{
+			"en":"Ar-Raafi’",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Exalter, The Elevator",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	23:{
+		"Arabic_Name": "ٱلْمُعِزُّ",
+		"Name":{
+			"en":"Al-Mu’Izz",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Honourer, The Bestower",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	24:{
+		"Arabic_Name": "ٱلْمُذِلُّ",
+		"Name":{
+			"en":"Al-Muzil",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Dishonourer, The Humiliator",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	25:{
+		"Arabic_Name": "ٱلْسَّمِيعُ",
+		"Name":{
+			"en":"As-Samee’",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All-Hearing",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	26:{
+		"Arabic_Name": "ٱلْبَصِيرُ",
+		"Name":{
+			"en":"Al-Baseer",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All-Seeing",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	27:{
+		"Arabic_Name": "ٱلْحَكَمُ",
+		"Name":{
+			"en":"Al-Hakam",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Judge, The Giver Of Justice",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	28:{
+		"Arabic_Name": "ٱلْعَدْلُ",
+		"Name":{
+			"en":"Al-‘Adl",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Utterly Just",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	29:{
+		"Arabic_Name": "ٱلْلَّطِيفُ",
+		"Name":{
+			"en":"Al-Lateef",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Subtle One, The Most Gentle",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	30:{
+		"Arabic_Name": "ٱلْخَبِيرُ",
+		"Name":{
+			"en":"Al-Khabeer",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Acquainted, The All-Aware",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	31:{
+		"Arabic_Name": "ٱلْحَلِيمُ",
+		"Name":{
+			"en":"Al-Haleem",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Most Forbearing",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	32:{
+		"Arabic_Name": "ٱلْعَظِيمُ",
+		"Name":{
+			"en":"Al-‘Atheem",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Magnificent, The Supreme",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	33:{
+		"Arabic_Name": "ٱلْغَفُورُ",
+		"Name":{
+			"en":"Al-Ghafoor",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Forgiving, The Exceedingly Forgiving",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	34:{
+		"Arabic_Name": "ٱلْشَّكُورُ",
+		"Name":{
+			"en":"Ash-Shakoor",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Most Appreciative",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	35:{
+		"Arabic_Name": "ٱلْعَلِيُّ",
+		"Name":{
+			"en":"Al-‘Alee",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Most High, The Exalted",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	36:{
+		"Arabic_Name": "ٱلْكَبِيرُ",
+		"Name":{
+			"en":"Al-Kabeer",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Greatest, The Most Grand",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	37:{
+		"Arabic_Name": "ٱلْحَفِيظُ",
+		"Name":{
+			"en":"Al-Hafeedh",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Preserver, The All-Heedful And All-Protecting",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	38:{
+		"Arabic_Name": "ٱلْمُقِيتُ",
+		"Name":{
+			"en":"Al-Muqeet",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Sustainer",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	39:{
+		"Arabic_Name": "ٱلْحَسِيبُ",
+		"Name":{
+			"en":"Al-Haseeb",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Reckoner, The Sufficient",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	40:{
+		"Arabic_Name": "ٱلْجَلِيلُ",
+		"Name":{
+			"en":"Al-Jaleel",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Majestic",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	41:{
+		"Arabic_Name": "ٱلْكَرِيمُ",
+		"Name":{
+			"en":"Al-Kareem",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Most Generous, The Most Esteemed",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	42:{
+		"Arabic_Name": "ٱلْرَّقِيبُ",
+		"Name":{
+			"en":"Ar-Raqeeb",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Watchful",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	43:{
+		"Arabic_Name": "ٱلْمُجِيبُ",
+		"Name":{
+			"en":"Al-Mujeeb",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Responsive One",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	44:{
+		"Arabic_Name": "ٱلْوَاسِعُ",
+		"Name":{
+			"en":"Al-Waasi’",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All-Encompassing, The Boundless",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	45:{
+		"Arabic_Name": "ٱلْحَكِيمُ",
+		"Name":{
+			"en":"Al-Hakeem",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All-Wise",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	46:{
+		"Arabic_Name": "ٱلْوَدُودُ",
+		"Name":{
+			"en":"Al-Wadood",
 			"ur":""
 		},
 		"Meaning":{
@@ -22,125 +714,789 @@ var Names:Dictionary = {
 		"Detail":{
 			"en":"",
 			"ur":""
-		}
+		},
 	},
-	1:{
-		"Arabic_Name":"ٱلْرَّحِيْمُ",
+	47:{
+		"Arabic_Name": "ٱلْمَجِيدُ",
 		"Name":{
-			"en":"Ar-Raheem",
+			"en":"Al-Majeed",
 			"ur":""
 		},
 		"Meaning":{
-			"en":"The Bestower of Mercy",
+			"en":"The Glorious, The Most Honorable",
 			"ur":""
 		},
 		"Detail":{
 			"en":"",
 			"ur":""
-		}
+		},
+	},
+	48:{
+		"Arabic_Name": "ٱلْبَاعِثُ",
+		"Name":{
+			"en":"Al-Ba’Ith",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Resurrector, The Raiser Of The Dead",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	49:{
+		"Arabic_Name": "ٱلْشَّهِيدُ",
+		"Name":{
+			"en":"Ash-Shaheed",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All- And Ever Witnessing",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	50:{
+		"Arabic_Name": "ٱلْحَقُّ",
+		"Name":{
+			"en":"Al-Haqq",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Absolute Truth",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	51:{
+		"Arabic_Name": "ٱلْوَكِيلُ",
+		"Name":{
+			"en":"Al-Wakeel",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Trustee, The Disposer Of Affairs",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	52:{
+		"Arabic_Name": "ٱلْقَوِيُّ",
+		"Name":{
+			"en":"Al-Qawiyy",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All-Strong",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	53:{
+		"Arabic_Name": "ٱلْمَتِينُ",
+		"Name":{
+			"en":"Al-Mateen",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Firm, The Steadfast",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	54:{
+		"Arabic_Name": "ٱلْوَلِيُّ",
+		"Name":{
+			"en":"Al-Waliyy",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Protecting Associate",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	55:{
+		"Arabic_Name": "ٱلْحَمِيدُ",
+		"Name":{
+			"en":"Al-Hameed",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Praiseworthy",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	56:{
+		"Arabic_Name": "ٱلْمُحْصِيُ",
+		"Name":{
+			"en":"Al-Muhsee",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The All-Enumerating, The Counter",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	57:{
+		"Arabic_Name": "ٱلْمُبْدِئُ",
+		"Name":{
+			"en":"Al-Mubdi",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Originator, The Initiator",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	58:{
+		"Arabic_Name": "ٱلْمُعِيدُ",
+		"Name":{
+			"en":"Al-Mu’Id",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Restorer, The Reinstater",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	59:{
+		"Arabic_Name": "ٱلْمُحْيِى",
+		"Name":{
+			"en":"Al-Muhyee",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Giver Of Life",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	60:{
+		"Arabic_Name": "ٱلْمُمِيتُ",
+		"Name":{
+			"en":"Al-Mumeet",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Bringer Of Death, The Destroyer",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	61:{
+		"Arabic_Name": "ٱلْحَىُّ",
+		"Name":{
+			"en":"Al-Hayy",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Ever-Living",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	62:{
+		"Arabic_Name": "ٱلْقَيُّومُ",
+		"Name":{
+			"en":"Al-Qayyoom",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Sustainer, The Self-Subsisting",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	63:{
+		"Arabic_Name": "ٱلْوَاجِدُ",
+		"Name":{
+			"en":"Al-Waajid",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Perceiver",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	64:{
+		"Arabic_Name": "ٱلْمَاجِدُ",
+		"Name":{
+			"en":"Al-Maajid",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Illustrious, The Magnificent",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	65:{
+		"Arabic_Name": "ٱلْوَاحِدُ",
+		"Name":{
+			"en":"Al-Waahid",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The One",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	66:{
+		"Arabic_Name": "ٱلْأَحَد",
+		"Name":{
+			"en":"Al-Ahad",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Unique, The Only One",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	67:{
+		"Arabic_Name": "ٱلْصَّمَدُ",
+		"Name":{
+			"en":"As-Samad",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Eternal, Satisfier Of Needs",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	68:{
+		"Arabic_Name": "ٱلْقَادِرُ",
+		"Name":{
+			"en":"Al-Qadir",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Capable, The Powerful",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	69:{
+		"Arabic_Name": "ٱلْمُقْتَدِرُ",
+		"Name":{
+			"en":"Al-Muqtadir",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Omnipotent",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	70:{
+		"Arabic_Name": "ٱلْمُقَدِّمُ",
+		"Name":{
+			"en":"Al-Muqaddim",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Expediter, The Promoter",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	71:{
+		"Arabic_Name": "ٱلْمُؤَخِّرُ",
+		"Name":{
+			"en":"Al-Mu’Akhkhir",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Delayer, The Retarder",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	72:{
+		"Arabic_Name": "ٱلأَوَّلُ",
+		"Name":{
+			"en":"Al-Awwal",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The First",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	73:{
+		"Arabic_Name": "ٱلْآخِرُ",
+		"Name":{
+			"en":"Al-Aakhir",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Last",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	74:{
+		"Arabic_Name": "ٱلْظَّاهِرُ",
+		"Name":{
+			"en":"Az-Dhaahir",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Manifest",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	75:{
+		"Arabic_Name": "ٱلْبَاطِنُ",
+		"Name":{
+			"en":"Al-Baatin",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Hidden One, Knower Of The Hidden",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	76:{
+		"Arabic_Name": "ٱلْوَالِي",
+		"Name":{
+			"en":"Al-Waali",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Governor, The Patron",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	77:{
+		"Arabic_Name": "ٱلْمُتَعَالِي",
+		"Name":{
+			"en":"Al-Muta’Ali",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Self Exalted",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	78:{
+		"Arabic_Name": "ٱلْبَرُّ",
+		"Name":{
+			"en":"Al-Barr",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Source Of Goodness, The Kind Benefactor",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	79:{
+		"Arabic_Name": "ٱلْتَّوَّابُ",
+		"Name":{
+			"en":"At-Tawwab",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Ever-Pardoning, The Relenting",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	80:{
+		"Arabic_Name": "ٱلْمُنْتَقِمُ",
+		"Name":{
+			"en":"Al-Muntaqim",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Avenger",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	81:{
+		"Arabic_Name": "ٱلْعَفُوُّ",
+		"Name":{
+			"en":"Al-‘Afuww",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Pardoner",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	82:{
+		"Arabic_Name": "ٱلْرَّؤُفُ",
+		"Name":{
+			"en":"Ar-Ra’Oof",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Most Kind",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	83:{
+		"Arabic_Name": "مَالِكُ ٱلْمُلْكُ",
+		"Name":{
+			"en":"Maalik-Ul-Mulk",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"Master Of The Kingdom, Owner Of The Dominion",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	84:{
+		"Arabic_Name": "ذُو ٱلْجَلَالِ وَٱلْإِكْرَامُ",
+		"Name":{
+			"en":"Dhul-Jalaali Wal-Ikraam",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"Possessor Of Glory And Honour, Lord Of Majesty And Generosity",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	85:{
+		"Arabic_Name": "ٱلْمُقْسِطُ",
+		"Name":{
+			"en":"Al-Muqsit",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Equitable, The Requiter",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	86:{
+		"Arabic_Name": "ٱلْجَامِعُ",
+		"Name":{
+			"en":"Al-Jaami’",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Gatherer, The Uniter",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	87:{
+		"Arabic_Name": "ٱلْغَنيُّ",
+		"Name":{
+			"en":"Al-Ghaniyy",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Self-Sufficient, The Wealthy",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	88:{
+		"Arabic_Name": "ٱلْمُغْنِيُّ",
+		"Name":{
+			"en":"Al-Mughni",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Enricher",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	89:{
+		"Arabic_Name": "ٱلْمَانِعُ",
+		"Name":{
+			"en":"Al-Mani’",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Withholder",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	90:{
+		"Arabic_Name": "ٱلْضَّارُ",
+		"Name":{
+			"en":"Ad-Dharr",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Distresser",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	91:{
+		"Arabic_Name": "ٱلْنَّافِعُ",
+		"Name":{
+			"en":"An-Nafi’",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Propitious, The Benefactor",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	92:{
+		"Arabic_Name": "ٱلْنُّورُ",
+		"Name":{
+			"en":"An-Nur",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Light, The Illuminator",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	93:{
+		"Arabic_Name": "ٱلْهَادِي",
+		"Name":{
+			"en":"Al-Haadi",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Guide",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	94:{
+		"Arabic_Name": "ٱلْبَدِيعُ",
+		"Name":{
+			"en":"Al-Badee’",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Incomparable Originator",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	95:{
+		"Arabic_Name": "ٱلْبَاقِي",
+		"Name":{
+			"en":"Al-Baaqi",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Ever-Surviving, The Everlasting",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	96:{
+		"Arabic_Name": "ٱلْوَارِثُ",
+		"Name":{
+			"en":"Al-Waarith",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Inheritor, The Heir",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	97:{
+		"Arabic_Name": "ٱلْرَّشِيدُ",
+		"Name":{
+			"en":"Ar-Rasheed",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Guide, Infallible Teacher",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
+	},
+	98:{
+		"Arabic_Name": "ٱلْصَّبُورُ",
+		"Name":{
+			"en":"As-Saboor",
+			"ur":""
+		},
+		"Meaning":{
+			"en":"The Forbearing, The Patient",
+			"ur":""
+		},
+		"Detail":{
+			"en":"",
+			"ur":""
+		},
 	}
 }
-#2	ٱلْرَّحِيْمُ	AR-RAHEEM	The Bestower of Mercy
-#3	ٱلْمَلِكُ	AL-MALIK	The King and Owner of Dominion
-#4	ٱلْقُدُّوسُ	AL-QUDDUS	The Absolutely Pure
-#5	ٱلْسَّلَامُ	AS-SALAM	The Perfection and Giver of Peace
-#6	ٱلْمُؤْمِنُ	AL-MU’MIN	The One Who gives Emaan and Security
-#7	ٱلْمُهَيْمِنُ	AL-MUHAYMIN	The Guardian, The Witness, The Overseer
-#8	ٱلْعَزِيزُ	AL-AZEEZ	The All Mighty
-#9	ٱلْجَبَّارُ	AL-JABBAR	The Compeller, The Restorer
-#10	ٱلْمُتَكَبِّرُ	AL-MUTAKABBIR	The Supreme, The Majestic
-#11	ٱلْخَالِقُ	AL-KHAALIQ	The Creator, The Maker
-#12	ٱلْبَارِئُ	AL-BAARI’	The Originator
-#13	ٱلْمُصَوِّرُ	AL-MUSAWWIR	The Fashioner
-#14	ٱلْغَفَّارُ	AL-GHAFFAR	The All- and Oft-Forgiving
-#15	ٱلْقَهَّارُ	AL-QAHHAR	The Subduer, The Ever-Dominating
-#16	ٱلْوَهَّابُ	AL-WAHHAAB	The Giver of Gifts
-#17	ٱلْرَّزَّاقُ	AR-RAZZAAQ	The Provider
-#18	ٱلْفَتَّاحُ	AL-FATTAAH	The Opener, The Judge
-#19	ٱلْعَلِيمُ	AL-‘ALEEM	The All-Knowing, The Omniscient
-#20	ٱلْقَابِضُ	AL-QAABID	The Withholder
-#21	ٱلْبَاسِطُ	AL-BAASIT	The Extender
-#22	ٱلْخَافِضُ	AL-KHAAFIDH	The Reducer, The Abaser
-#23	ٱلْرَّافِعُ	AR-RAAFI’	The Exalter, The Elevator
-#24	ٱلْمُعِزُّ	AL-MU’IZZ	The Honourer, The Bestower
-#25	ٱلْمُذِلُّ	AL-MUZIL	The Dishonourer, The Humiliator
-#26	ٱلْسَّمِيعُ	AS-SAMEE’	The All-Hearing
-#27	ٱلْبَصِيرُ	AL-BASEER	The All-Seeing
-#28	ٱلْحَكَمُ	AL-HAKAM	The Judge, The Giver of Justice
-#29	ٱلْعَدْلُ	AL-‘ADL	The Utterly Just
-#30	ٱلْلَّطِيفُ	AL-LATEEF	The Subtle One, The Most Gentle
-#31	ٱلْخَبِيرُ	AL-KHABEER	The Acquainted, the All-Aware
-#32	ٱلْحَلِيمُ	AL-HALEEM	The Most Forbearing
-#33	ٱلْعَظِيمُ	AL-‘ATHEEM	The Magnificent, The Supreme
-#34	ٱلْغَفُورُ	AL-GHAFOOR	The Forgiving, The Exceedingly Forgiving
-#35	ٱلْشَّكُورُ	ASH-SHAKOOR	The Most Appreciative
-#36	ٱلْعَلِيُّ	AL-‘ALEE	The Most High, The Exalted
-#37	ٱلْكَبِيرُ	AL-KABEER	The Greatest, The Most Grand
-#38	ٱلْحَفِيظُ	AL-HAFEEDH	The Preserver, The All-Heedful and All-Protecting
-#39	ٱلْمُقِيتُ	AL-MUQEET	The Sustainer
-#40	ٱلْحَسِيبُ	AL-HASEEB	The Reckoner, The Sufficient
-#41	ٱلْجَلِيلُ	AL-JALEEL	The Majestic
-#42	ٱلْكَرِيمُ	AL-KAREEM	The Most Generous, The Most Esteemed
-#43	ٱلْرَّقِيبُ	AR-RAQEEB	The Watchful
-#44	ٱلْمُجِيبُ	AL-MUJEEB	The Responsive One
-#45	ٱلْوَاسِعُ	AL-WAASI’	The All-Encompassing, the Boundless
-#46	ٱلْحَكِيمُ	AL-HAKEEM	The All-Wise
-#47	ٱلْوَدُودُ	AL-WADOOD	The Most Loving
-#48	ٱلْمَجِيدُ	AL-MAJEED	The Glorious, The Most Honorable
-#49	ٱلْبَاعِثُ	AL-BA’ITH	The Resurrector, The Raiser of the Dead
-#50	ٱلْشَّهِيدُ	ASH-SHAHEED	The All- and Ever Witnessing
-#51	ٱلْحَقُّ	AL-HAQQ	The Absolute Truth
-#52	ٱلْوَكِيلُ	AL-WAKEEL	The Trustee, The Disposer of Affairs
-#53	ٱلْقَوِيُّ	AL-QAWIYY	The All-Strong
-#54	ٱلْمَتِينُ	AL-MATEEN	The Firm, The Steadfast
-#55	ٱلْوَلِيُّ	AL-WALIYY	The Protecting Associate
-#56	ٱلْحَمِيدُ	AL-HAMEED	The Praiseworthy
-#57	ٱلْمُحْصِيُ	AL-MUHSEE	The All-Enumerating, The Counter
-#58	ٱلْمُبْدِئُ	AL-MUBDI	The Originator, The Initiator
-#59	ٱلْمُعِيدُ	AL-MU’ID	The Restorer, The Reinstater
-#60	ٱلْمُحْيِى	AL-MUHYEE	The Giver of Life
-#61	ٱلْمُمِيتُ	AL-MUMEET	The Bringer of Death, the Destroyer
-#62	ٱلْحَىُّ	AL-HAYY	The Ever-Living
-#63	ٱلْقَيُّومُ	AL-QAYYOOM	The Sustainer, The Self-Subsisting
-#64	ٱلْوَاجِدُ	AL-WAAJID	The Perceiver
-#65	ٱلْمَاجِدُ	AL-MAAJID	The Illustrious, the Magnificent
-#66	ٱلْوَاحِدُ	AL-WAAHID	The One
-#67	ٱلْأَحَد	AL-AHAD	The Unique, The Only One
-#68	ٱلْصَّمَدُ	AS-SAMAD	The Eternal, Satisfier of Needs
-#69	ٱلْقَادِرُ	AL-QADIR	The Capable, The Powerful
-#70	ٱلْمُقْتَدِرُ	AL-MUQTADIR	The Omnipotent
-#71	ٱلْمُقَدِّمُ	AL-MUQADDIM	The Expediter, The Promoter
-#72	ٱلْمُؤَخِّرُ	AL-MU’AKHKHIR	The Delayer, the Retarder
-#73	ٱلأَوَّلُ	AL-AWWAL	The First
-#74	ٱلْآخِرُ	AL-AAKHIR	The Last
-#75	ٱلْظَّاهِرُ	AZ-DHAAHIR	The Manifest
-#76	ٱلْبَاطِنُ	AL-BAATIN	The Hidden One, Knower of the Hidden
-#77	ٱلْوَالِي	AL-WAALI	The Governor, The Patron
-#78	ٱلْمُتَعَالِي	AL-MUTA’ALI	The Self Exalted
-#79	ٱلْبَرُّ	AL-BARR	The Source of Goodness, the Kind Benefactor
-#80	ٱلْتَّوَّابُ	AT-TAWWAB	The Ever-Pardoning, The Relenting
-#81	ٱلْمُنْتَقِمُ	AL-MUNTAQIM	The Avenger
-#82	ٱلْعَفُوُّ	AL-‘AFUWW	The Pardoner
-#83	ٱلْرَّؤُفُ	AR-RA’OOF	The Most Kind
-#84	مَالِكُ ٱلْمُلْكُ	MAALIK-UL-MULK	Master of the Kingdom, Owner of the Dominion
-#85	ذُو ٱلْجَلَالِ وَٱلْإِكْرَامُ	DHUL-JALAALI WAL-IKRAAM	Possessor of Glory and Honour, Lord of Majesty and Generosity
-#86	ٱلْمُقْسِطُ	AL-MUQSIT	The Equitable, the Requiter
-#87	ٱلْجَامِعُ	AL-JAAMI’	The Gatherer, the Uniter
-#88	ٱلْغَنيُّ	AL-GHANIYY	The Self-Sufficient, The Wealthy
-#89	ٱلْمُغْنِيُّ	AL-MUGHNI	The Enricher
-#90	ٱلْمَانِعُ	AL-MANI’	The Withholder
-#91	ٱلْضَّارُ	AD-DHARR	The Distresser
-#92	ٱلْنَّافِعُ	AN-NAFI’	The Propitious, the Benefactor
-#93	ٱلْنُّورُ	AN-NUR	The Light, The Illuminator
-#94	ٱلْهَادِي	AL-HAADI	The Guide
-#95	ٱلْبَدِيعُ	AL-BADEE’	The Incomparable Originator
-#96	ٱلْبَاقِي	AL-BAAQI	The Ever-Surviving, The Everlasting
-#97	ٱلْوَارِثُ	AL-WAARITH	The Inheritor, The Heir
-#98	ٱلْرَّشِيدُ	AR-RASHEED	The Guide, Infallible Teacher
-#99	ٱلْصَّبُورُ	AS-SABOOR	The Forbearing, The Patient
-
-func get_all() -> Dictionary:
-	return Names
 
 func get_name_val(val:int) -> Dictionary:
 	return Names[val]

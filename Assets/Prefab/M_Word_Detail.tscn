@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Resources/UI/Long_Rec_Base.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Assets/Prefab/NameMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Prefab/MenuButton_Allahs_Name.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Prefab/Name_Details.gd" type="Script" id=11]
+[ext_resource path="res://Resources/UI/UnderShadow.png" type="Texture" id=12]
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 2
 
 [sub_resource type="Animation" id=1]
 resource_name = "Load"
@@ -69,8 +73,9 @@ expand = true
 stretch_mode = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Detail_Area"]
+anchor_left = 0.02
 anchor_top = 0.22
-anchor_right = 1.0
+anchor_right = 0.98
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_top = 18.56
@@ -82,49 +87,35 @@ script = ExtResource( 6 )
 Scroll_Limit = 600
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Detail_Area/ScrollContainer"]
-margin_right = 1080.0
+margin_right = 1036.8
 margin_bottom = 1564.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="H2" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
-unique_name_in_owner = true
-margin_right = 1080.0
-margin_bottom = 88.0
-theme = ExtResource( 5 )
-text = "In the Name of Allah"
-autowrap = true
+custom_constants/separation = 45
 
 [node name="H3" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 92.0
-margin_right = 1080.0
-margin_bottom = 271.0
+margin_right = 1036.0
+margin_bottom = 149.0
 theme = ExtResource( 5 )
 text = "The Most Compassionate, Most Merciful."
 autowrap = true
 
-[node name="ColorRect" type="ColorRect" parent="Detail_Area/ScrollContainer/VBoxContainer/H3"]
+[node name="TextureRect" type="TextureRect" parent="Detail_Area/ScrollContainer/VBoxContainer/H3"]
+material = SubResource( 3 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -10.0
-margin_right = 10.0
-margin_bottom = 7.0
-color = Color( 0.819608, 0.890196, 0.929412, 0.462745 )
-
-[node name="ColorRect2" type="ColorRect" parent="Detail_Area/ScrollContainer/VBoxContainer/H3/ColorRect"]
-show_behind_parent = true
-anchor_top = -1.0
-anchor_right = 1.0
-anchor_bottom = 2.0
-color = Color( 0.07, 0.11, 0.16, 0.2 )
+margin_left = -45.0
+margin_right = 55.0
+texture = ExtResource( 12 )
+stretch_mode = 1
 
 [node name="P" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 275.0
-margin_right = 1080.0
-margin_bottom = 454.0
+margin_top = 194.0
+margin_right = 1036.0
+margin_bottom = 343.0
 theme = ExtResource( 5 )
 text = "In the Name of Allah—the Most Compassionate, Most Merciful."
 align = 3
@@ -143,20 +134,37 @@ stretch_mode = 1
 
 [node name="H1" type="Label" parent="Name_area"]
 unique_name_in_owner = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -432.0
-margin_top = -239.4
-margin_right = 432.0
-margin_bottom = 239.4
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.3
+margin_left = 45.0
+margin_right = -45.0
+margin_bottom = 262.0
 theme = ExtResource( 4 )
 text = "ﻪِﻠَّﻟﭐ ﻢِﺴْﺑِ"
 align = 1
 valign = 1
 autowrap = true
 uppercase = true
+
+[node name="H2" type="Label" parent="Name_area"]
+unique_name_in_owner = true
+anchor_left = 0.06
+anchor_top = 0.7
+anchor_right = 0.93
+anchor_bottom = 0.85
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.823529, 0.890196, 0.933333, 1 )
+custom_colors/font_outline_modulate = Color( 0.823529, 0.890196, 0.933333, 1 )
+text = "In the Name of Allah"
+align = 1
+autowrap = true
+
+[node name="Name_Area_Click" type="TextureButton" parent="Name_area"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
 
 [node name="BackButton" parent="." instance=ExtResource( 7 )]
 anchor_left = 0.05
@@ -180,5 +188,6 @@ autoplay = "Load"
 anims/Load = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
+[connection signal="pressed" from="Name_area/Name_Area_Click" to="." method="_on_Name_Area_pressed"]
 [connection signal="New_Name" from="NameMenu" to="." method="_on_New_Name"]
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_MenuButton_pressed"]

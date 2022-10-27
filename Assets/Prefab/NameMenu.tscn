@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Resources/UI/Name_Area.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=2]
@@ -11,6 +11,11 @@
 [ext_resource path="res://Resources/Fonts/English_T.otf" type="DynamicFontData" id=9]
 [ext_resource path="res://Resources/UI/Down_arrow.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Prefab/Scroll_Name_Area.gd" type="Script" id=11]
+[ext_resource path="res://Resources/Fonts/Quran.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
@@ -144,6 +149,20 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("Names_Area/ScrollContainer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "Focus"
+} ]
+}
 
 [node name="NameMenu" type="Control"]
 anchor_right = 1.0
@@ -170,13 +189,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -210.0
-margin_top = -170.0
+margin_left = -235.0
+margin_top = -140.0
+margin_right = 130.0
+margin_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
 custom_colors/font_color = Color( 0.631373, 0.854902, 0.890196, 1 )
 custom_colors/font_outline_modulate = Color( 0.631373, 0.854902, 0.890196, 1 )
+custom_fonts/font = SubResource( 6 )
 text = "ﻪِﻠَّﻟﭐ ﻢِﺴْﺑِ"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="TextureButton" type="TextureButton" parent="ColorRect/Selected_Name/ArabicLabel"]
 anchor_right = 1.0
@@ -190,7 +215,7 @@ anchor_bottom = 1.0
 [node name="Ar-Eng" type="Label" parent="ColorRect/Details"]
 unique_name_in_owner = true
 margin_right = 756.0
-margin_bottom = 245.0
+margin_bottom = 217.0
 theme = ExtResource( 2 )
 text = "In the Name of Allah"
 align = 2
@@ -202,14 +227,14 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 50.0
-margin_top = -10.0
+margin_bottom = 10.0
 color = Color( 0.823529, 0.890196, 0.933333, 1 )
 
 [node name="Short_Trans" type="Label" parent="ColorRect/Details"]
 unique_name_in_owner = true
-margin_top = 249.0
+margin_top = 221.0
 margin_right = 756.0
-margin_bottom = 372.0
+margin_bottom = 344.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 0.823529, 0.890196, 0.933333, 1 )
 custom_colors/font_outline_modulate = Color( 0.823529, 0.890196, 0.933333, 1 )
@@ -233,6 +258,7 @@ anchor_top = 0.05
 anchor_right = 1.0
 anchor_bottom = 0.95
 theme = ExtResource( 4 )
+follow_focus = true
 scroll_horizontal_enabled = false
 script = ExtResource( 11 )
 Names_PC = ExtResource( 3 )
