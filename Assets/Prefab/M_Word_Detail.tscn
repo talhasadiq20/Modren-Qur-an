@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Resources/UI/Long_Rec_Base.png" type="Texture" id=2]
@@ -12,6 +12,18 @@
 [ext_resource path="res://Assets/Prefab/MenuButton_Allahs_Name.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Prefab/Name_Details.gd" type="Script" id=11]
 [ext_resource path="res://Resources/UI/UnderShadow.png" type="Texture" id=12]
+[ext_resource path="res://Resources/Fonts/English_T.otf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=4]
+size = 45
+outline_size = 1
+outline_color = Color( 0.0745098, 0.105882, 0.164706, 1 )
+use_filter = true
+extra_spacing_top = 12
+extra_spacing_bottom = 12
+extra_spacing_char = 2
+extra_spacing_space = 5
+font_data = ExtResource( 13 )
 
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 2
@@ -96,8 +108,9 @@ custom_constants/separation = 45
 [node name="H3" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 margin_right = 1036.0
-margin_bottom = 149.0
+margin_bottom = 159.0
 theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "The Most Compassionate, Most Merciful."
 autowrap = true
 
@@ -113,13 +126,11 @@ stretch_mode = 1
 
 [node name="P" type="Label" parent="Detail_Area/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 194.0
+margin_top = 204.0
 margin_right = 1036.0
-margin_bottom = 343.0
+margin_bottom = 353.0
 theme = ExtResource( 5 )
 text = "In the Name of Allah—the Most Compassionate, Most Merciful."
-align = 3
-valign = 3
 autowrap = true
 
 [node name="Name_area" type="TextureRect" parent="."]
