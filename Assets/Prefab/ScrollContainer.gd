@@ -4,6 +4,7 @@ export(int) var Scroll_Limit:int = 300
 
 onready var Detail_area:TextureRect = $"%Detail_Area"
 onready var Name_area:TextureRect = $"%Name_area"
+onready var Name_Lang: = $"%H2"
 
 var Scroll_num:int = 0
 var Name_area_Top_Limit: float
@@ -33,4 +34,6 @@ func _process(_delta):
 #Scroll Area Moment
 	smoth = range_lerp(smoth_Num,0,1,0.18,0.22)
 	anchor_top =smoth
-
+#Name area disapearing
+	smoth = range_lerp(smoth_Num,0,1,0,1)
+	Name_Lang.self_modulate.a = smoth if smoth > 0.1 else 0

@@ -117,7 +117,7 @@ tracks/2/keys = {
 "values": [ 1.0, 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("ColorRect2:color")
+tracks/3/path = NodePath("Fade_Away:color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -133,6 +133,11 @@ tracks/3/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+
+[node name="Main_BC" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.168627, 0.176471, 0.313726, 1 )
 
 [node name="Control" type="Control" parent="."]
 anchor_left = 0.5
@@ -177,6 +182,7 @@ unique_name_in_owner = true
 margin_top = 196.0
 margin_right = 687.0
 margin_bottom = 354.0
+rect_scale = Vector2( 1, 1e-05 )
 size_flags_horizontal = 15
 size_flags_vertical = 15
 theme = ExtResource( 4 )
@@ -195,10 +201,10 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="Fade_Away" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.168627, 0.176471, 0.313726, 1 )
+color = Color( 0.168627, 0.176471, 0.313726, 0 )
 __meta__ = {
 "_edit_use_anchors_": true
 }

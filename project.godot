@@ -47,6 +47,10 @@ window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/arabic-text/plugin.cfg" )
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
