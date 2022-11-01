@@ -31,6 +31,7 @@ config/icon="res://Icon.svg"
 GlobleSettings="*res://Assets/Globle/Globle_Settings.gd"
 SceneLoader="*res://Assets/Globle/SceneLoader.gd"
 Save="*res://Assets/Globle/Save.gd"
+ProgessData="*res://Assets/Globle/Progess_Data.gd"
 
 [debug]
 

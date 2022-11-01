@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Resources/UI/Hexagon.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Prefab/M_Sections_Buttons.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Fonts/English_T.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Resources/UI/Polygon_Loaded.png" type="Texture" id=5]
+[ext_resource path="res://Resources/UI/Polygon_Unloaded.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -12,7 +14,7 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Show_Details"
-length = 0.5
+length = 0.7
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("TextureRect:rect_scale:x")
 tracks/0/interp = 1
@@ -20,8 +22,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, -0.56235, 0.2, 0.44988, 0.7, -0.2, -0.492873, 0.2, 0.492873 ),
-"times": PoolRealArray( 0, 0.5 )
+"points": PoolRealArray( 1, -0.25, -0.56235, 0.2, 0.44988, 0.9, -0.2, -0.492873, 0.2, 0.492873 ),
+"times": PoolRealArray( 0, 0.4 )
 }
 tracks/1/type = "bezier"
 tracks/1/path = NodePath("TextureRect:rect_scale:y")
@@ -30,8 +32,32 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 1, -0.25, -0.546552, 0.2, 0.437242, 0.7, -0.2, -0.488155, 0.25, 0.610194 ),
-"times": PoolRealArray( 0, 0.5 )
+"points": PoolRealArray( 1, -0.25, -0.546552, 0.2, 0.437242, 0.9, -0.2, -0.488155, 0.25, 0.610194 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Progress:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.42, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Progress:radial_fill_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.45, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
 }
 
 [node name="Icons" type="TextureButton"]
@@ -44,6 +70,22 @@ theme = ExtResource( 2 )
 action_mode = 0
 keep_pressed_outside = true
 script = ExtResource( 3 )
+
+[node name="Progress" type="TextureProgress" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 30.0
+rounded = true
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 5 )
+fill_mode = 8
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 0.5
@@ -70,7 +112,6 @@ grow_vertical = 2
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.42 )
 custom_constants/shadow_offset_x = 4
 custom_fonts/font = SubResource( 1 )
-text = "Text"
 align = 1
 valign = 3
 autowrap = true
