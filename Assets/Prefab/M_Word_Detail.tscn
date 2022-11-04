@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Resources/UI/Long_Rec_Base.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Prefab/Name_Details.gd" type="Script" id=11]
 [ext_resource path="res://Resources/UI/UnderShadow.png" type="Texture" id=12]
 [ext_resource path="res://Resources/Fonts/English_T.otf" type="DynamicFontData" id=13]
+[ext_resource path="res://Assets/Prefab/M_Like_btn.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=4]
 size = 45
@@ -133,6 +134,21 @@ theme = ExtResource( 5 )
 text = "In the Name of Allah—the Most Compassionate, Most Merciful."
 autowrap = true
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Detail_Area/ScrollContainer/VBoxContainer"]
+margin_top = 398.0
+margin_right = 1036.0
+margin_bottom = 598.0
+grow_horizontal = 2
+rect_min_size = Vector2( 0, 200 )
+alignment = 1
+
+[node name="Like_btn" parent="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 14 )]
+unique_name_in_owner = true
+margin_left = 518.0
+margin_right = 518.0
+margin_bottom = 200.0
+rect_scale = Vector2( 1, 1 )
+
 [node name="Name_area" type="TextureRect" parent="."]
 unique_name_in_owner = true
 anchor_left = 0.1
@@ -199,6 +215,7 @@ autoplay = "Load"
 anims/Load = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
+[connection signal="Clicked_Like_btn" from="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer/Like_btn" to="." method="_on_Clicked_Like_btn"]
 [connection signal="pressed" from="Name_area/Name_Area_Click" to="." method="_on_Name_Area_pressed"]
 [connection signal="New_Name" from="NameMenu" to="." method="_on_New_Name"]
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_MenuButton_pressed"]

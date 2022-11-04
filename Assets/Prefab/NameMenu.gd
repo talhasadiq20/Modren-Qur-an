@@ -4,6 +4,7 @@ onready var Arabic_Name: = $"%ArabicLabel"
 onready var Arabic2Lang: = $"%Ar-Eng"
 onready var Meaning: = $"%Short_Trans"
 onready var Anim: = $AnimationPlayer
+onready var likebtn: = $"%Like_btn"
 
 var Playing_in_reverse:bool = false
 var Current_Arabic_Name:String = ""
@@ -37,6 +38,11 @@ func New_Selection(_name,_arbic2Lang,_meaning,_detail,_number,_forced_new)->void
 	Current_Name_Number = _number
 	if _forced_new:
 		New_Name_Selected()
+	
+	if Save.Is_Name_Fav(Current_Name_Number):
+		likebtn.Like()
+	else:
+		likebtn.reset()
 
 func _on_animation_finished(anim_name):
 	match anim_name:

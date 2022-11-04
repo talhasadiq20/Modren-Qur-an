@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Resources/UI/Name_Area.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Resources/UI/Down_arrow.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Prefab/Scroll_Name_Area.gd" type="Script" id=11]
 [ext_resource path="res://Resources/Fonts/Quran.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Resources/UI/Heart_Plain.png" type="Texture" id=13]
+[ext_resource path="res://Resources/UI/Heart.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Prefab/M_Like_btn.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=6]
 size = 100
@@ -244,6 +247,48 @@ align = 2
 valign = 2
 autowrap = true
 
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/Details"]
+margin_top = 348.0
+margin_right = 756.0
+margin_bottom = 548.0
+rect_min_size = Vector2( 0, 200 )
+alignment = 1
+
+[node name="Like_btn" parent="ColorRect/Details/HBoxContainer" instance=ExtResource( 15 )]
+unique_name_in_owner = true
+margin_left = 378.0
+margin_right = 378.0
+margin_bottom = 200.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="Back01" parent="ColorRect/Details/HBoxContainer/Like_btn" index="0"]
+visible = true
+texture = null
+
+[node name="Heart01" parent="ColorRect/Details/HBoxContainer/Like_btn" index="1"]
+visible = true
+texture = ExtResource( 13 )
+
+[node name="Back02" parent="ColorRect/Details/HBoxContainer/Like_btn" index="2"]
+visible = false
+rect_scale = Vector2( 1e-05, 1e-05 )
+texture = null
+
+[node name="CPUParticles2D" parent="ColorRect/Details/HBoxContainer/Like_btn/Back02" index="0"]
+visible = false
+lifetime = 0.01
+
+[node name="Heart02" parent="ColorRect/Details/HBoxContainer/Like_btn" index="3"]
+visible = false
+rect_scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 14 )
+
+[node name="AnimationPlayer" parent="ColorRect/Details/HBoxContainer/Like_btn" index="4"]
+playback_speed = 10.0
+
+[node name="TextureButton" parent="ColorRect/Details/HBoxContainer/Like_btn" index="5"]
+visible = false
+
 [node name="Names_Area" type="TextureRect" parent="."]
 anchor_left = 1.0
 anchor_top = 0.5
@@ -304,3 +349,5 @@ anims/Show = SubResource( 4 )
 [connection signal="button_down" from="Names_Area/Top_Arrow" to="Names_Area/ScrollContainer" method="_on_Top_Arrow_button_down"]
 [connection signal="pressed" from="Names_Area/Bottom_Arrow" to="Names_Area/ScrollContainer" method="_on_Bottom_Arrow_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+
+[editable path="ColorRect/Details/HBoxContainer/Like_btn"]
