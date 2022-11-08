@@ -110,6 +110,10 @@ tracks/3/keys = {
 }
 
 [node name="BackButton" type="TextureButton"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.05
+anchor_bottom = 0.05
 margin_right = 60.0
 margin_bottom = 60.0
 rect_scale = Vector2( 1.5, 1.5 )
@@ -143,6 +147,7 @@ rect_pivot_offset = Vector2( 0, 14 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
 anims/Clicked = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 

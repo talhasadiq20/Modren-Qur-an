@@ -17,7 +17,7 @@ func _ready():
 	Name_area_Bottom_Limit = Name_area.anchor_bottom
 
 func _process(_delta):
-	if Scroll_num == scroll_vertical or scroll_vertical > Scroll_Limit:
+	if Scroll_num == scroll_vertical:
 		return
 	else:
 		Scroll_num = scroll_vertical

@@ -6,6 +6,7 @@ enum lang{
 }
 
 var Language:int = lang.en
+
 func Get_Arabic() ->String: return "Arabic_Name"
 
 func Get_Current_Language()->String:

@@ -1,6 +1,5 @@
 extends Control
 
-export(String,FILE) var Next_Scene:String
 export(NodePath) var Allah_Names
 
 onready var Particals:Array = [$Star_Particals,$Star_Particals2]

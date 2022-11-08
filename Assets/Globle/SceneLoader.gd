@@ -43,6 +43,19 @@ func _process(_delta):
 				return
 			var resorce: = loader.get_resource()
 			get_tree().get_root().call_deferred("add_child",resorce.instance())
-			Current_Scene.queue_free()
+			if Current_Scene: Current_Scene.queue_free()
 			LoadingScene.queue_free()
 			Loading_State = loading_status.NULL
+
+func Fake_Load(val:String)->void:
+	var screen = load("res://Assets/Prefab/Fake_Loader.tscn").instance()
+	var last_scene = get_tree().get_root().get_children().back()
+	last_scene.modulate = Color(1,1,1,0)
+#	get_tree().get_root().call_deferred("add_child",screen)
+	last_scene.queue_free()
+	add_child(screen)
+	yield(screen,"Finished")
+	if get_tree().change_scene(val) == OK:
+#		yield(get_tree(),"idle_frame")
+		return
+	Load_Scene(val,null) 
