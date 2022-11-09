@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Resources/UI/Name_Area.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Resources/UI/Heart_Plain.png" type="Texture" id=13]
 [ext_resource path="res://Resources/UI/Heart.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Prefab/M_Like_btn.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Prefab/Badge_Small.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=6]
 size = 100
@@ -256,10 +257,11 @@ alignment = 1
 
 [node name="Like_btn" parent="ColorRect/Details/HBoxContainer" instance=ExtResource( 15 )]
 unique_name_in_owner = true
-margin_left = 378.0
-margin_right = 378.0
+margin_left = 188.0
+margin_right = 188.0
 margin_bottom = 200.0
 rect_scale = Vector2( 1, 1 )
+size_flags_horizontal = 6
 
 [node name="Back01" parent="ColorRect/Details/HBoxContainer/Like_btn" index="0"]
 visible = true
@@ -288,6 +290,18 @@ playback_speed = 10.0
 
 [node name="TextureButton" parent="ColorRect/Details/HBoxContainer/Like_btn" index="5"]
 visible = false
+
+[node name="SmallBadge" parent="ColorRect/Details/HBoxContainer" instance=ExtResource( 16 )]
+unique_name_in_owner = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 528.0
+margin_top = 0.0
+margin_right = 608.0
+margin_bottom = 200.0
+size_flags_horizontal = 6
 
 [node name="Names_Area" type="TextureRect" parent="."]
 anchor_left = 1.0

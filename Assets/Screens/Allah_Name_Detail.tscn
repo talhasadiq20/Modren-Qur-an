@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Screens/Name_side_Panal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Prefab/MenuButton.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Resources/UI/Rect.png" type="Texture" id=12]
 [ext_resource path="res://Resources/UI/UnderShadow.png" type="Texture" id=13]
 [ext_resource path="res://Resources/UI/Long_Rec_Base.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Prefab/Done_Button.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=4]
 size = 45
@@ -144,10 +145,25 @@ alignment = 1
 
 [node name="Like_btn" parent="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
 unique_name_in_owner = true
-margin_left = 518.0
-margin_right = 518.0
+margin_left = 258.0
+margin_right = 258.0
 margin_bottom = 200.0
 rect_scale = Vector2( 1, 1 )
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="Done_Button" parent="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 15 )]
+unique_name_in_owner = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 778.0
+margin_top = 0.0
+margin_right = 778.0
+margin_bottom = 200.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
 
 [node name="Name_area" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -213,6 +229,7 @@ anims/Load = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
 [connection signal="Clicked_Like_btn" from="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer/Like_btn" to="." method="_on_Clicked_Like_btn"]
+[connection signal="Clicked" from="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer/Done_Button" to="." method="_on_Done_Button_Clicked"]
 [connection signal="pressed" from="Name_area/Name_Area_Click" to="." method="_on_Name_Area_pressed"]
 [connection signal="New_Name" from="NameMenu" to="." method="_on_New_Name"]
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_MenuButton_pressed"]

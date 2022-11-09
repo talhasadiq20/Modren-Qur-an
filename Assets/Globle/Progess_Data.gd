@@ -15,16 +15,20 @@ const Total_Hadis:int = 0
 
 func Leared_New_Name(val:int) -> void:
 	Allah_Name_Learned += val
+	Allah_Name_Learned = int(min(Total_Names,max(Allah_Name_Learned,0)))
+	ProgressDic["Allah_Name_Learned"] = Allah_Name_Learned
 	Update_Allah_Name_Progress()
 
 func Update_Allah_Name_Progress()->void:
 	Allah_Name_Progress = (float(Allah_Name_Learned) / 99.0) * 100.0
+	Update_Overall_Progress()
 
 func Update_Overall_Progress()->void:
 	var denom:float = Total_Names + Total_Suras + Total_Words + Total_Hadis
 	var numi:float = Allah_Name_Learned
 	Over_All_Progress = (numi/denom) * 100
 	ProgressDic["Over_All_Progress"] = Over_All_Progress
+	Save_File()
 
 func _init():
 	Load_File()
@@ -37,7 +41,8 @@ func Load_File() ->void:
 	
 	if ProgressDic.has("Over_All_Progress"):
 		Over_All_Progress = ProgressDic["Over_All_Progress"]
-	
+	if ProgressDic.has("Allah_Name_Learned"):
+		Allah_Name_Learned = ProgressDic["Allah_Name_Learned"]
 
 func Save_File()->void:
 	var file = File.new()

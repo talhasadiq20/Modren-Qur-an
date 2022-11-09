@@ -33,7 +33,7 @@ func _on_Icons_button_up():
 		return
 	else:
 		timer.stop()
-		SceneLoader.Load_Scene(Next_Scene_Path,get_owner())
+		SceneLoader.Fake_Load(Next_Scene_Path)
 
 func _on_timeout():
 	if !Showing_Details:

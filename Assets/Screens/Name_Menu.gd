@@ -17,6 +17,7 @@ func _ready():
 		ins.num = i
 		ins.Parent = self
 		ins.Scene = Names_Detail_Pac
+		ins.Level = Save.Get_Name_Level(i)
 	yield(get_tree(),"idle_frame")
 	scrole.ensure_control_visible(scrole.get_child(0).get_child(Save.Reading_Allah_Name))
 	scrole.scroll_vertical += 650 if Save.Reading_Allah_Name > 5 else 0

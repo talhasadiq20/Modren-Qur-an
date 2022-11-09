@@ -1,0 +1,165 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/UI/Untick.png" type="Texture" id=1]
+[ext_resource path="res://Resources/UI/Tick.png" type="Texture" id=2]
+[ext_resource path="res://Resources/UI/Circle_Full_tick.png" type="Texture" id=3]
+[ext_resource path="res://Resources/UI/Circle_Full_untick.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Prefab/Done_Button.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Done"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Circle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tick:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Circle2:rect_scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.0056101, -0.14906, 1.41253, 0.14906, -1.41253, 1, -0.14906, 1.66727, 0.14906, -1.66727 ),
+"times": PoolRealArray( 0.1, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Circle2:rect_scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0.0421944, -0.152816, 1.46421, 0.152816, -1.46421, 1, -0.14906, 1.65217, 0.14906, -1.65217 ),
+"times": PoolRealArray( 0.1, 0.5 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Tick2:rect_scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1e-05, -0.5, 0, 0.5, 0, 1, -0.2, 1.39556, 0.2, -1.39556 ),
+"times": PoolRealArray( 0.4, 1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Tick2:rect_scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1e-05, -0.5, 0, 0.5, 0, 1, -0.2, 1.35027, 0.2, -1.35027 ),
+"times": PoolRealArray( 0.4, 1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Circle2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Tick2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="Done_Button" type="TextureButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+script = ExtResource( 5 )
+
+[node name="Circle" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -147.0
+margin_top = -147.0
+margin_right = 147.0
+margin_bottom = 147.0
+texture = ExtResource( 4 )
+
+[node name="Tick" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -46.0
+margin_top = -32.0
+margin_right = 46.0
+margin_bottom = 32.0
+texture = ExtResource( 1 )
+
+[node name="Circle2" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -147.0
+margin_top = -147.0
+margin_right = 147.0
+margin_bottom = 147.0
+rect_scale = Vector2( 0.0056101, 0.0421944 )
+rect_pivot_offset = Vector2( 147, 147 )
+texture = ExtResource( 3 )
+
+[node name="Tick2" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -46.0
+margin_top = -32.0
+margin_right = 46.0
+margin_bottom = 32.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 46, 33 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/Done = SubResource( 1 )
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

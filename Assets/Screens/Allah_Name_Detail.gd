@@ -6,6 +6,7 @@ onready var Fast_Meaning: = $"%H3"
 onready var Detail: = $"%P"
 onready var menuButton: = $MenuButton
 onready var likebtn: = $"%Like_btn"
+onready var Done_btn: = $"%Done_Button"
 
 var Current_name: = ""
 
@@ -22,10 +23,9 @@ func _on_New_Name(arabic_Name, arabic2Lang, meaning, detail, number):
 	if Current_name != "":
 		Click_Menu()
 	Current_name = arabic_Name
-	if Save.Is_Name_Fav():
-		likebtn.Like()
-	else:
-		likebtn.reset()
+	if Save.Is_Name_Fav(): likebtn.Like()
+	else: likebtn.reset()
+	Done_btn.Is_Done = bool(Save.Get_Name_Level(number))
 
 func _on_Name_Area_pressed():
 	Click_Menu()
@@ -40,3 +40,9 @@ func _on_Clicked_Like_btn(liked):
 		Save.Add_Fav_Name()
 	else:
 		Save.Remove_Fav_Name()
+
+func _on_Done_Button_Clicked(stat):
+	if stat:
+		Save.Update_Name_Progress(Save.Reading_Allah_Name,1)
+	else:
+		Save.Update_Name_Progress(Save.Reading_Allah_Name,0)

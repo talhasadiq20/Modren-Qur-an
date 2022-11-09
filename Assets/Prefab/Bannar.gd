@@ -22,12 +22,8 @@ func Set_Detail(val):
 
 func Set_Level(val):
 	Level = val
-	Small_Bage.self_modulate = Color(1,1,1,1)
-	Badge.modulate = Color(1,1,1,1)
-	match val:
-		0:
-			Small_Bage.self_modulate = Color(1,1,1,0)
-			Badge.modulate = Color(1,1,1,0)
+	Small_Bage.level = val
+	Badge.level = val
 
 func _on_button_down():
 	Save.Reading_Allah_Name = num
