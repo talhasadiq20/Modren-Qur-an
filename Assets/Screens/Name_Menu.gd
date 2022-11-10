@@ -5,6 +5,7 @@ export(String,FILE,"*.tscn") var Names_Detail_Pac
 
 onready var Banar_Parent: = $ScrollContainer/VBoxContainer
 onready var scrole: = $ScrollContainer
+onready var test_btn: = $TestBtn
 
 func _ready():
 	var names = Allahs_Name.new()
@@ -21,4 +22,8 @@ func _ready():
 	yield(get_tree(),"idle_frame")
 	scrole.ensure_control_visible(scrole.get_child(0).get_child(Save.Reading_Allah_Name))
 	scrole.scroll_vertical += 650 if Save.Reading_Allah_Name > 5 else 0
+	if ProgessData.Allah_Name_Learned < 5:
+		test_btn.queue_free()
+	else:
+		test_btn.visible = true
 

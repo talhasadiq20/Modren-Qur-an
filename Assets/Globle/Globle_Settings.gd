@@ -17,3 +17,7 @@ func Get_Current_Language()->String:
 			return "ur"
 	return "en"
 
+func Get_Right_Color() -> Color:
+	return Color(0.33,0.91,0.56,1)
+func Get_Wrong_Color() -> Color:
+	return Color(0.95,0.33,0.33,1)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Prefab/Unanswered.gd" type="Script" id=1]
+[ext_resource path="res://Resources/UI/Cross_Small.png" type="Texture" id=2]
+[ext_resource path="res://Resources/UI/Star.png" type="Texture" id=3]
+[ext_resource path="res://Resources/UI/Tick_Small.png" type="Texture" id=4]
+
+[node name="Un_Answered" type="TextureRect"]
+margin_left = 168.0
+margin_top = 41.0
+margin_right = 188.0
+margin_bottom = 61.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
+List_texturs = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ]

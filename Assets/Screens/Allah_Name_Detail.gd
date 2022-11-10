@@ -34,7 +34,6 @@ func Click_Menu()->void:
 	menuButton._on_MenuButton_pressed()
 	menuButton._on_pressed()
 
-
 func _on_Clicked_Like_btn(liked):
 	if liked:
 		Save.Add_Fav_Name()
@@ -43,6 +42,7 @@ func _on_Clicked_Like_btn(liked):
 
 func _on_Done_Button_Clicked(stat):
 	if stat:
-		Save.Update_Name_Progress(Save.Reading_Allah_Name,1)
+		Save.Level_Up_Name(Save.Reading_Allah_Name)
+		ProgessData.Allah_Name_Learned = 1
 	else:
-		Save.Update_Name_Progress(Save.Reading_Allah_Name,0)
+		Save.Level_Down_Name(Save.Reading_Allah_Name)

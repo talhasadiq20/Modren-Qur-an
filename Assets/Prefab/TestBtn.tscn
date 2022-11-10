@@ -1,0 +1,121 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/UI/Test_btn_Fill.png" type="Texture" id=1]
+[ext_resource path="res://Resources/UI/Test_btn_Empty.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Prefab/Detail_Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Prefab/TestBtn.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "click"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 100.0 ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.2, 0.259887, 0.2, -0.259887, 1, -0.2, -0.256376, 0.2, 0.256376 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:rect_scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.205772, 0.270419, 0.205772, -0.270419, 1, -0.194228, -0.245844, 0.194228, 0.245844 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Text:rect_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Processing:rect_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1e-05 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Processing:percent_visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.8, 0.8, 1.0 ]
+}
+
+[node name="TestBtn" type="TextureProgress"]
+anchor_left = 0.95
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.05
+margin_left = -390.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 195, 45 )
+theme = ExtResource( 3 )
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 1 )
+fill_mode = 3
+script = ExtResource( 4 )
+
+[node name="Text" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 195, 0 )
+text = "Test"
+align = 1
+valign = 1
+
+[node name="Processing" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1, 1e-05 )
+rect_pivot_offset = Vector2( 195, 90 )
+text = "Processing..."
+align = 1
+valign = 1
+percent_visible = 0.8
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+playback_speed = 2.0
+anims/click = SubResource( 1 )
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_button_down"]

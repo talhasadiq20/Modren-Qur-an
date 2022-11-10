@@ -1,7 +1,7 @@
 extends Node
 const SAVE_DIR:String = "user://save/"
 const SAVE_PATH:String = SAVE_DIR+"save.dat"
-
+const Max_Levels:int = 4
 var Main_dic:Dictionary = {
 	"Allah_Name_Learning": 0
 }
@@ -15,13 +15,22 @@ func Get_Name_Level(Name_num:int) ->int:
 	if !Names_Level.has(str(Name_num)): return 0
 	return Names_Level[str(Name_num)]
 
-func Update_Name_Progress(Name_Num:int,Level:int) ->void:
-	Names_Level[str(Name_Num)] = Level
+func Level_Up_Name(Name_Num:int)->void:
+	if !Names_Level.has(str(Name_Num)):
+		Names_Level[str(Name_Num)] = 1
+	else:
+		Names_Level[str(Name_Num)] += 1
+	Names_Level[str(Name_Num)] = min(Names_Level[str(Name_Num)],Max_Levels)
 	Main_dic["Names_Level"] = Names_Level
-	if Level == 1:
-		ProgessData.Allah_Name_Learned = 1
-	elif Level == 0:
+	Save_File()
+func Level_Down_Name(Name_Num:int)->void:
+	Names_Level[str(Name_Num)] -= 1
+	Names_Level[str(Name_Num)] = max(Names_Level[str(Name_Num)],0)
+	if max(Names_Level[str(Name_Num)],0) <= 0:
+# warning-ignore:return_value_discarded
+		Names_Level.erase(Name_Num)
 		ProgessData.Allah_Name_Learned = -1
+	Main_dic["Names_Level"] = Names_Level
 	Save_File()
 
 func Add_Fav_Name() ->void:
