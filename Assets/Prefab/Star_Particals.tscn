@@ -71,7 +71,7 @@ tracks/1/keys = {
 }
 
 [node name="Star_Particals" type="CPUParticles2D"]
-amount = 20
+amount = 1
 lifetime = 600.0
 preprocess = 10.0
 explosiveness = 1.0
@@ -86,7 +86,7 @@ script = ExtResource( 2 )
 
 [node name="Star_Particals_M" type="CPUParticles2D" parent="."]
 rotation = 6.28319
-amount = 40
+amount = 1
 lifetime = 600.0
 preprocess = 10.0
 speed_scale = 0.1
@@ -103,7 +103,7 @@ color_initial_ramp = SubResource( 1 )
 
 [node name="Star_Particals_S" type="CPUParticles2D" parent="."]
 rotation = -6.28319
-amount = 120
+amount = 1
 lifetime = 600.0
 preprocess = 10.0
 speed_scale = 0.1

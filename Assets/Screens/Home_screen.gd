@@ -11,4 +11,9 @@ func _ready():
 func Update_Partical_Progress():
 	var progress = ProgessData.Over_All_Progress
 	for par in Particals:
-		par.Show_Particals = (progress/100) * 120
+		par.Show_Particals = (progress/100.0) * 120.0
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		get_tree().quit()
+		get_tree().queue_free()

@@ -43,6 +43,7 @@ run/main_scene="res://Assets/Screens/SplashScreen.tscn"
 config/use_custom_user_dir=true
 boot_splash/bg_color=Color( 0.168627, 0.176471, 0.313726, 1 )
 config/icon="res://Icon.svg"
+config/quit_on_go_back=false
 
 [autoload]
 
