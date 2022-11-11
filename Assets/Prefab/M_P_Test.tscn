@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Resources/UI/Ground_Arc.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefab/Arabic_Theme.tres" type="Theme" id=2]
@@ -12,7 +12,11 @@
 [ext_resource path="res://Resources/UI/Test_btn_Fill.png" type="Texture" id=10]
 [ext_resource path="res://Resources/UI/Test_btn_Empty.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=12]
-[ext_resource path="res://Assets/Prefab/Endbtn.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Prefab/Test_Quit.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Prefab/NoBtn.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Prefab/YesBtn.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Prefab/Test_Over_M.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Prefab/NextBtn.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "click"
@@ -84,6 +88,60 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.8, 0.8, 1.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "End_Results"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Test_Over:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Test_Over:anchor_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Test_Over:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Test_Over:anchor_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
 }
 
 [node name="Test Area" type="Control"]
@@ -250,32 +308,9 @@ margin_bottom = 974.0
 [node name="timer" type="Timer" parent="."]
 unique_name_in_owner = true
 
-[node name="Endbtn" type="TextureButton" parent="."]
-visible = false
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -411.6
-margin_top = -135.6
-margin_right = -49.6801
-margin_bottom = -91.2
-texture_normal = ExtResource( 11 )
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="Label" type="Label" parent="Endbtn"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 6 )
-text = "Finish"
-align = 1
-valign = 1
-
 [node name="NextBtn" type="TextureProgress" parent="."]
 unique_name_in_owner = true
+visible = false
 anchor_left = 0.98
 anchor_top = 0.98
 anchor_right = 0.98
@@ -287,6 +322,7 @@ theme = ExtResource( 6 )
 texture_under = ExtResource( 11 )
 texture_progress = ExtResource( 10 )
 fill_mode = 3
+script = ExtResource( 18 )
 
 [node name="Text" type="Label" parent="NextBtn"]
 anchor_right = 1.0
@@ -337,6 +373,7 @@ You will Loss Your Progress"
 align = 1
 valign = 1
 autowrap = true
+script = ExtResource( 14 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Quit_Scene/VBoxContainer"]
 margin_top = 1308.0
@@ -345,39 +382,29 @@ margin_bottom = 1398.0
 theme = ExtResource( 6 )
 alignment = 1
 
-[node name="YesBtn" type="TextureButton" parent="Quit_Scene/VBoxContainer/HBoxContainer"]
-margin_left = 148.0
-margin_right = 538.0
-margin_bottom = 90.0
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 10 )
+[node name="YesBtn" parent="Quit_Scene/VBoxContainer/HBoxContainer" instance=ExtResource( 16 )]
 
-[node name="Label" type="Label" parent="Quit_Scene/VBoxContainer/HBoxContainer/YesBtn"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Yes"
-align = 1
-valign = 1
+[node name="NoBtn" parent="Quit_Scene/VBoxContainer/HBoxContainer" instance=ExtResource( 15 )]
 
-[node name="NoBtn" type="TextureButton" parent="Quit_Scene/VBoxContainer/HBoxContainer"]
-margin_left = 542.0
-margin_right = 932.0
-margin_bottom = 90.0
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 10 )
+[node name="Test_Over" parent="." instance=ExtResource( 17 )]
+unique_name_in_owner = true
+visible = false
+anchor_left = 1.0
+anchor_right = 2.0
 
-[node name="Label2" type="Label" parent="Quit_Scene/VBoxContainer/HBoxContainer/NoBtn"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "No"
-align = 1
-valign = 1
+[node name="Test_Time" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 4096.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+playback_speed = 4.0
+anims/End_Results = SubResource( 2 )
+anims/RESET = SubResource( 3 )
 
 [connection signal="Answered" from="VBoxContainer/Op_A" to="." method="_on_Answered"]
 [connection signal="Answered" from="VBoxContainer/Op_B" to="." method="_on_Answered"]
 [connection signal="Answered" from="VBoxContainer/Op_C" to="." method="_on_Answered"]
 [connection signal="Answered" from="VBoxContainer/Op_D" to="." method="_on_Answered"]
-[connection signal="button_up" from="Endbtn" to="Endbtn" method="_on_btn_up"]
 [connection signal="button_down" from="NextBtn/TextureButton" to="." method="_on_Next_button_down"]
-[connection signal="button_up" from="Quit_Scene/VBoxContainer/HBoxContainer/YesBtn" to="Endbtn" method="_on_YesBtn_up"]
-[connection signal="button_up" from="Quit_Scene/VBoxContainer/HBoxContainer/NoBtn" to="." method="_on_NoBtn_up"]

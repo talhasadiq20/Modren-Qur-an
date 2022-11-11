@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/Awards/LVL1_S.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefab/Badge_Small.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Awards/LVL2_S.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Awards/LVL3_S.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Awards/LVL4_S.png" type="Texture" id=5]
 
 [node name="SmallBadge" type="TextureRect"]
 anchor_left = 0.5
@@ -16,3 +19,4 @@ rect_min_size = Vector2( 80, 80 )
 texture = ExtResource( 1 )
 stretch_mode = 4
 script = ExtResource( 2 )
+tex = [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ]

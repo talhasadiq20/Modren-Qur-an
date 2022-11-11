@@ -7,6 +7,7 @@ onready var lable:Label = $"%Label"
 onready var timer: = $Timer
 onready var anim = $AnimationPlayer
 onready var Progress = $"%Progress"
+onready var Badge: = $SmallBadge
 
 var Showing_Details:bool = false
 
@@ -40,3 +41,9 @@ func _on_timeout():
 		anim.play("Show_Details")
 		anim.playback_speed = 1
 		Showing_Details = true
+
+func Set_Level(val:int):
+	if val >0:
+		Badge.level = val
+	else:
+		Badge.modulate = Color(1,1,1,0)

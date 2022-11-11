@@ -43,6 +43,5 @@ func _on_Clicked_Like_btn(liked):
 func _on_Done_Button_Clicked(stat):
 	if stat:
 		Save.Level_Up_Name(Save.Reading_Allah_Name)
-		ProgessData.Allah_Name_Learned = 1
 	else:
-		Save.Level_Down_Name(Save.Reading_Allah_Name)
+		Save.Forgot_Name(Save.Reading_Allah_Name)

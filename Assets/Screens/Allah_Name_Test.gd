@@ -7,20 +7,20 @@ func _init():
 	Empty_List()
 	var Levels_List: = Save.Names_Level
 	var All_Names: = Allahs_Name.new()
-	var Ask_Names: = range(Levels_List.size())
-	Ask_Names.shuffle()
+	var Ask_Names: = []
+	Get_Asking_Names(Ask_Names,Levels_List)
 	for i in range(7):
 		if i >= Ask_Names.size():
 # warning-ignore:return_value_discarded
 			Testing_Questions.erase(i)
 			continue
-		if Levels_List[str(Ask_Names[i])] == 0:
+		if Levels_List[Ask_Names[i]] == 0:
 			continue
-		All_Names.Select_Name(Ask_Names[i])
+		All_Names.Select_Name(int(Ask_Names[i]))
 		Testing_Questions[i]["Q"] = All_Names.Get_Selected_Arabic_Name()
 		Testing_Questions[i]["A"] = All_Names.Get_Selected_Meaning()
 		Testing_Questions[i]["D"] = All_Names.Get_Selected_Name()
-		Testing_Questions[i]["i"] = Ask_Names[i]
+		Testing_Questions[i]["i"] = int(Ask_Names[i])
 	All_Names.queue_free()
 
 func _ready():
@@ -66,9 +66,14 @@ func Empty_List():
 		},
 	}
 
-func _on_Endbtn_down():
+func _on_TestEnded():
 	for i in range(Asking_Patren.size()):
 		if Score[i] >= 1:
 			Save.Level_Up_Name(Asking_Patren[i])
 		else:
 			Save.Level_Down_Name(Asking_Patren[i])
+
+func Get_Asking_Names(val:Array,dic:Dictionary):
+	for i in dic:
+		val.append(i)
+	val.shuffle()

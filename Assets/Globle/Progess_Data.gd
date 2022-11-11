@@ -14,7 +14,7 @@ const Total_Suras:int = 114
 const Total_Hadis:int = 0
 
 func Leared_New_Name(val:int) -> void:
-	Allah_Name_Learned += val
+	Allah_Name_Learned = val
 	Allah_Name_Learned = int(min(Total_Names,max(Allah_Name_Learned,0)))
 	ProgressDic["Allah_Name_Learned"] = Allah_Name_Learned
 	Update_Allah_Name_Progress()

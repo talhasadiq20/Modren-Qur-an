@@ -8,9 +8,12 @@ onready var Answers_MCQs:Array = [$"%Op_A",$"%Op_B",$"%Op_C",$"%Op_D"]
 onready var Question_Lable: = $"%Question"
 onready var Dis_Lable: = $"%Dis"
 onready var Next_btn: = $"%NextBtn"
-onready var End_btn: = $Endbtn
+onready var End_Scene: = $"%Test_Over"
 onready var Quit_Scene: = $Quit_Scene
+onready var Test_Time: = $"%Test_Time"
+onready var Anim: = $AnimationPlayer
 
+signal Test_Ended
 
 var Current_Question:int = 1
 var Max_Question:int = 1
@@ -30,24 +33,25 @@ func Next_Question()->void:
 	Next_btn.visible = false
 	Current_Question += 1
 	if Current_Question > Questions.size():
+		Show_Results()
 		return
 	Progress_Lable.text = str(Current_Question)+"/"+str(Max_Question)
 	Progress_Tex.value = Current_Question
 	Testing_Num = Asking_Patren[Current_Question-1]
-	Question_Lable.text = Questions[Testing_Num]["Q"]
+	Question_Lable.text = Questions[Current_Question-1]["Q"]
 	Dis_Lable.visible = true
-	if Questions[Testing_Num]["D"] != "":
-		Dis_Lable.text = Questions[Testing_Num]["D"]
+	if Questions[Current_Question-1]["D"] != "":
+		Dis_Lable.text = Questions[Current_Question-1]["D"]
 	else:
 		Dis_Lable.visible = false
 	var Corrent_Answer_At:int = randi() % 4
-	var Wrong_Answeres: = Get_Wrong_Answers(Testing_Num)
+	var Wrong_Answeres: = Get_Wrong_Answers(Current_Question-1)
 	for i in range(4):
 		if i != Corrent_Answer_At:
 			Answers_MCQs[i].Set_Text(Wrong_Answeres[i])
 			Answers_MCQs[i].Answer_Holding = false
 		else:
-			Answers_MCQs[i].Set_Text(Questions[Testing_Num]["A"])
+			Answers_MCQs[i].Set_Text(Questions[Current_Question-1]["A"])
 			Answers_MCQs[i].Answer_Holding = true
 
 func _on_Answered(Is_Correct):
@@ -57,9 +61,9 @@ func _on_Answered(Is_Correct):
 		if box.Answer_Holding:
 			box.Correct_Answer()
 	if Is_Correct:
-		Score[Testing_Num] += 1
+		Score[Current_Question-1] += 1
 	else:
-		Score[Testing_Num] -= 1
+		Score[Current_Question-1] -= 1
 	timer.start(1)
 	Next_Button_Show(Is_Correct)
 
@@ -83,9 +87,6 @@ func Get_Wrong_Answers(Checking:int) ->Array:
 	return temp_Answers_Dic
 
 func Next_Button_Show(Is_Correct:bool):
-	if Current_Question == Questions.size():
-		End_btn.visible = true
-		return
 	Next_btn.visible = true
 	if Is_Correct:
 		Next_btn.modulate = GlobleSettings.Get_Right_Color()
@@ -104,3 +105,13 @@ func _on_NoBtn_up():
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
 		Quit_Scene.visible = true
+
+func Show_Results():
+	emit_signal("Test_Ended")
+	End_Scene.visible = true
+	var time:int = 4096 - Test_Time.get_time_left()
+	End_Scene.time_Played = time
+	var Corrent_Answers: = 0
+	for val in Score: Corrent_Answers += 1 if val > 0 else 0
+	End_Scene.Set_Score(Corrent_Answers,Score.size())
+	Anim.play("End_Results")

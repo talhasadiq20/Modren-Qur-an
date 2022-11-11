@@ -6,7 +6,7 @@
 [node name="Test Area" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Endbtn" parent="." index="3"]
+[node name="Test_Over" parent="." index="5"]
 Last_Sceen = "res://Assets/Screens/Names_Menu.tscn"
 
-[connection signal="button_down" from="Endbtn" to="." method="_on_Endbtn_down"]
+[connection signal="Test_Ended" from="." to="." method="_on_TestEnded"]
