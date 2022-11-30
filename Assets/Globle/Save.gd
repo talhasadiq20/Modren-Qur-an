@@ -11,6 +11,7 @@ var Reading_Allah_Name:int = 0 setget Set_New_Name
 var Allah_Names_Learned:int = 0 setget Set_Names_Learned
 var Names_Fav:Array = []
 var Names_Level:Dictionary = {}
+var Notes:Dictionary = {}
 
 func Get_Name_Level(Name_num:int) ->int:
 	if !Names_Level.has(str(Name_num)): return 0
@@ -41,7 +42,6 @@ func Forgot_Name(Name_Num:int) ->void:
 	Names_Level.erase(str(Name_Num))
 	Main_dic["Names_Level"] = Names_Level
 	Save_File()
-	
 
 func Add_Fav_Name() ->void:
 	if Reading_Allah_Name in Names_Fav:
@@ -73,6 +73,22 @@ func Set_New_Name(val:int) -> void:
 	Reading_Allah_Name = val
 	Save_File()
 
+func Add_Note(name_number:int,note:String) ->void:
+	Notes[str(name_number)] = note
+	if note == "":
+# warning-ignore:return_value_discarded
+		Notes.erase(str(name_number))
+	Main_dic["Notes"] = Notes
+	Save_File()
+func Has_Note(name_number:int) ->bool:
+	if !Main_dic.has("Notes"):
+		return false
+	if Main_dic["Notes"].has(str(name_number)):
+		return true
+	return false
+func Get_Note(name_number:int) ->String:
+	return Main_dic["Notes"][str(name_number)]
+
 func _init():
 	Load_File()
 
@@ -89,6 +105,7 @@ func Load_File() ->void:
 		ProgessData.Allah_Name_Learned = Allah_Names_Learned
 	if Main_dic.has("Fav_Names"): Names_Fav = Main_dic["Fav_Names"]
 	if Main_dic.has("Names_Level"): Names_Level = Main_dic["Names_Level"]
+	if Main_dic.has("Notes"): Notes = Main_dic["Notes"]
 
 func Save_File()->void:
 	var file = File.new()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Resources/UI/Name_Area.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Resources/UI/Heart.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Prefab/M_Like_btn.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Prefab/Badge_Small.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Prefab/M_Note_Btn.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=6]
 size = 100
@@ -257,8 +258,8 @@ alignment = 1
 
 [node name="Like_btn" parent="ColorRect/Details/HBoxContainer" instance=ExtResource( 15 )]
 unique_name_in_owner = true
-margin_left = 188.0
-margin_right = 188.0
+margin_left = 124.0
+margin_right = 124.0
 margin_bottom = 200.0
 rect_scale = Vector2( 1, 1 )
 size_flags_horizontal = 6
@@ -297,11 +298,37 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 528.0
+margin_left = 337.0
 margin_top = 0.0
-margin_right = 608.0
+margin_right = 417.0
 margin_bottom = 200.0
 size_flags_horizontal = 6
+
+[node name="M_Note_Btn" parent="ColorRect/Details/HBoxContainer" instance=ExtResource( 17 )]
+unique_name_in_owner = true
+margin_left = 631.0
+margin_right = 631.0
+margin_bottom = 200.0
+size_flags_horizontal = 6
+
+[node name="unClicked" parent="ColorRect/Details/HBoxContainer/M_Note_Btn" index="0"]
+visible = false
+
+[node name="Clicked" parent="ColorRect/Details/HBoxContainer/M_Note_Btn" index="1"]
+rect_scale = Vector2( 1, 1 )
+
+[node name="Pencil" parent="ColorRect/Details/HBoxContainer/M_Note_Btn" index="2"]
+visible = false
+rect_rotation = 360.0
+
+[node name="Pencil2" parent="ColorRect/Details/HBoxContainer/M_Note_Btn" index="3"]
+visible = true
+
+[node name="TextureProgress" parent="ColorRect/Details/HBoxContainer/M_Note_Btn" index="5"]
+visible = false
+
+[node name="TextureRect" parent="ColorRect/Details/HBoxContainer/M_Note_Btn" index="6"]
+visible = false
 
 [node name="Names_Area" type="TextureRect" parent="."]
 anchor_left = 1.0
@@ -365,3 +392,4 @@ anims/Show = SubResource( 4 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 
 [editable path="ColorRect/Details/HBoxContainer/Like_btn"]
+[editable path="ColorRect/Details/HBoxContainer/M_Note_Btn"]

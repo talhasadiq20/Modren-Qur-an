@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Screens/Name_side_Panal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Prefab/MenuButton.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Resources/UI/UnderShadow.png" type="Texture" id=13]
 [ext_resource path="res://Resources/UI/Long_Rec_Base.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Prefab/Done_Button.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Prefab/M_Note_Btn.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Prefab/Notes.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=4]
 size = 45
@@ -60,6 +62,58 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Note_Color_Blur:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Show_Notes"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Notes:anchor_bottom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.525 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Notes:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.525 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Note_Color_Blur:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [node name="Allah_Name_Detail" type="Control"]
@@ -145,8 +199,8 @@ alignment = 1
 
 [node name="Like_btn" parent="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
 unique_name_in_owner = true
-margin_left = 258.0
-margin_right = 258.0
+margin_left = 171.0
+margin_right = 171.0
 margin_bottom = 200.0
 rect_scale = Vector2( 1, 1 )
 size_flags_horizontal = 6
@@ -158,12 +212,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 778.0
+margin_left = 517.0
 margin_top = 0.0
-margin_right = 778.0
+margin_right = 517.0
 margin_bottom = 200.0
 size_flags_horizontal = 6
 size_flags_vertical = 3
+
+[node name="Note_Btn" parent="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 16 )]
+unique_name_in_owner = true
+margin_left = 864.0
+margin_right = 864.0
+margin_bottom = 200.0
+size_flags_horizontal = 6
 
 [node name="Name_area" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -209,6 +270,12 @@ anchor_top = 0.1
 anchor_right = 0.9
 anchor_bottom = 0.9
 
+[node name="Note_Color_Blur" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.07, 0.11, 0.16, 0.5 )
+
 [node name="BackButton" parent="." instance=ExtResource( 3 )]
 scene = "res://Assets/Screens/Names_Menu.tscn"
 
@@ -223,13 +290,21 @@ anchor_bottom = 0.05
 script = ExtResource( 9 )
 Text = "Name"
 
+[node name="Notes" parent="." instance=ExtResource( 17 )]
+unique_name_in_owner = true
+anchor_top = 1.0
+anchor_bottom = 1.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Load"
 anims/Load = SubResource( 1 )
 anims/RESET = SubResource( 2 )
+anims/Show_Notes = SubResource( 5 )
 
 [connection signal="Clicked_Like_btn" from="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer/Like_btn" to="." method="_on_Clicked_Like_btn"]
 [connection signal="Clicked" from="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer/Done_Button" to="." method="_on_Done_Button_Clicked"]
+[connection signal="Cliked_Note_Btn" from="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer/Note_Btn" to="." method="_on_Cliked_Note_Btn"]
 [connection signal="pressed" from="Name_area/Name_Area_Click" to="." method="_on_Name_Area_pressed"]
 [connection signal="New_Name" from="NameMenu" to="." method="_on_New_Name"]
 [connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_MenuButton_pressed"]
+[connection signal="New_note" from="Notes" to="." method="_on_Notes_New_note"]

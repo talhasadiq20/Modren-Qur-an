@@ -7,8 +7,8 @@ var Meaning:String = ""
 var Arbic2Lang:String = "" setget set_Name
 
 onready var Name_Lable: = $Name_Lable
-onready var btn1: = $TextureButton
-onready var btn2: = $SecondClick
+onready var btn1: = $btn1
+onready var btn2: = $btn2
 
 signal new_Selection(Arabic,A2L,meaning,detail,number,Force_Click)
 
@@ -38,3 +38,9 @@ func UnSelected()->void:
 	btn2.visible = false
 	self_modulate = Color(1,1,1,0)
 	Name_Lable.self_modulate = Color(0.07,0.1,0.16,1)
+
+func Disable()->void:
+	btn1.disabled = true
+
+func Enable()->void:
+	btn1.disabled = false

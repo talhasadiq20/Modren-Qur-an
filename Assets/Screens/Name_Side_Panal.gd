@@ -6,6 +6,7 @@ onready var Meaning: = $"%Short_Trans"
 onready var Anim: = $AnimationPlayer
 onready var likebtn: = $"%Like_btn"
 onready var Small_Badge: = $"%SmallBadge"
+onready var Note_btn: = $"%M_Note_Btn"
 
 var Playing_in_reverse:bool = false
 var Current_Arabic_Name:String = ""
@@ -45,6 +46,10 @@ func New_Selection(_name,_arbic2Lang,_meaning,_detail,_number,_forced_new)->void
 	else:
 		likebtn.reset()
 	Small_Badge.level = Save.Get_Name_Level(_number)
+	if Save.Has_Note(Current_Name_Number):
+		Note_btn.visible = true
+	else:
+		Note_btn.visible = false
 
 func _on_animation_finished(anim_name):
 	match anim_name:
