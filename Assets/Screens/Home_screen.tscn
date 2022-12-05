@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Prefab/M_Dock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/UI/Ground_Arc.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Prefab/M_Sections_Buttons.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Screens/Home_screen.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Prefab/Star_Particals.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/UI/Book.png" type="Texture" id=6]
+[ext_resource path="res://Resources/UI/Book_Unsaturated.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Prefab/Dock_btn.tscn" type="PackedScene" id=8]
 
 [node name="Home_screen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
 Allah_Names = NodePath("ScrollContainer/VBoxContainer/HBoxContainer/Allah_Names")
+Current_Dock_Btn = NodePath("Dock/HBoxContainer/Home_btn")
 
 [node name="Star_Particals2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 304, 359 )
@@ -19,6 +23,7 @@ position = Vector2( 304, 359 )
 position = Vector2( 785, 1625 )
 
 [node name="Dock" parent="." instance=ExtResource( 1 )]
+margin_top = -204.0
 
 [node name="TextureRect" type="TextureRect" parent="Dock"]
 show_behind_parent = true
@@ -27,6 +32,65 @@ margin_top = -145.0
 margin_bottom = 35.0
 texture = ExtResource( 2 )
 stretch_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dock"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="Home_btn" parent="Dock/HBoxContainer" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 22.0
+margin_top = 0.0
+margin_right = 244.0
+margin_bottom = 204.0
+Next_Scene = "res://Assets/Screens/Home_screen.tscn"
+Images = [ ExtResource( 6 ), ExtResource( 7 ) ]
+
+[node name="Home_btn2" parent="Dock/HBoxContainer" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 293.0
+margin_top = 0.0
+margin_right = 515.0
+margin_bottom = 204.0
+disabled = false
+Next_Scene = "res://Assets/Screens/Home_screen.tscn"
+Is_Active = false
+Images = [ ExtResource( 6 ), ExtResource( 7 ) ]
+
+[node name="Home_btn3" parent="Dock/HBoxContainer" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 564.0
+margin_top = 0.0
+margin_right = 786.0
+margin_bottom = 204.0
+disabled = false
+Next_Scene = "res://Assets/Screens/Home_screen.tscn"
+Is_Active = false
+Images = [ ExtResource( 6 ), ExtResource( 7 ) ]
+
+[node name="Home_btn4" parent="Dock/HBoxContainer" instance=ExtResource( 8 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 835.0
+margin_top = 0.0
+margin_right = 1057.0
+margin_bottom = 204.0
+disabled = false
+Next_Scene = "res://Assets/Screens/Home_screen.tscn"
+Is_Active = false
+Images = [ ExtResource( 6 ), ExtResource( 7 ) ]
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_top = 0.1
@@ -75,3 +139,7 @@ margin_right = 510.0
 [node name="Icons2" parent="ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
 margin_left = 570.0
 margin_right = 1020.0
+
+[connection signal="button_down" from="Dock/HBoxContainer/Home_btn2" to="." method="_on_dock_button_down"]
+[connection signal="button_down" from="Dock/HBoxContainer/Home_btn3" to="." method="_on_dock_button_down"]
+[connection signal="button_down" from="Dock/HBoxContainer/Home_btn4" to="." method="_on_dock_button_down"]

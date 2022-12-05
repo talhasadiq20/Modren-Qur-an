@@ -1,6 +1,7 @@
 extends Control
 
 export(NodePath) var Allah_Names
+export(NodePath) var Current_Dock_Btn
 
 onready var Particals:Array = [$Star_Particals,$Star_Particals2]
 
@@ -26,3 +27,6 @@ func Get_Over_All_Level(dic:Dictionary) ->int:
 	for key in dic:
 		progress += dic[key]
 	return int(progress)
+
+func _on_dock_button_down():
+	get_node(Current_Dock_Btn).Deactivate()

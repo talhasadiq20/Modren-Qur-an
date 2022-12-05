@@ -15,8 +15,9 @@ func _on_Done_Button_Clicked():
 		emit_signal("New_note",Note.text)
 
 func _on_Note_focus_entered():
-	in_focus = true
-	Anim.play("Focus")
+	if not in_focus:
+		in_focus = true
+		Anim.play("Focus")
 
 func _on_Note_focus_exited():
 	if in_focus:

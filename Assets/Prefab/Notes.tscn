@@ -64,18 +64,36 @@ margin_bottom = 500.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Done_Button" parent="VBoxContainer" instance=ExtResource( 3 )]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1080.0
+margin_bottom = 215.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+alignment = 1
+
+[node name="TextureRect2" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+margin_right = 476.0
+margin_bottom = 215.0
+size_flags_horizontal = 7
+
+[node name="Done_Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 540.0
+margin_left = 539.0
 margin_top = 0.0
-margin_right = 540.0
+margin_right = 539.0
 margin_bottom = 215.0
 size_flags_horizontal = 6
-size_flags_vertical = 7
+size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
+
+[node name="TextureRect" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+margin_left = 603.0
+margin_right = 1080.0
+margin_bottom = 215.0
+size_flags_horizontal = 3
 
 [node name="Note" type="TextEdit" parent="VBoxContainer"]
 unique_name_in_owner = true
@@ -96,6 +114,8 @@ anims/Focus = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
 [connection signal="button_down" from="TextureButton" to="." method="_on_button_down"]
-[connection signal="button_down" from="VBoxContainer/Done_Button" to="." method="_on_Done_Button_Clicked"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/TextureRect2" to="." method="_on_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/Done_Button" to="." method="_on_Done_Button_Clicked"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/TextureRect" to="." method="_on_button_down"]
 [connection signal="focus_entered" from="VBoxContainer/Note" to="." method="_on_Note_focus_entered"]
 [connection signal="focus_exited" from="VBoxContainer/Note" to="." method="_on_Note_focus_exited"]
