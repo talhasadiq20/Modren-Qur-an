@@ -119,9 +119,11 @@ margin_right = 510.0
 Title = "Allah Names"
 Next_Scene_Path = "res://Assets/Screens/Names_Menu.tscn"
 
-[node name="Icons2" parent="ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Learn_Arabic" parent="ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 570.0
 margin_right = 1020.0
+Title = "Learn Arabic"
+Next_Scene_Path = "res://Assets/Screens/Learn_Arabic.tscn"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
 margin_top = 530.0

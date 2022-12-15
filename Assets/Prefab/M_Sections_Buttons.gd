@@ -1,7 +1,7 @@
 extends TextureButton
 
 export(String) var Title:String = "text"
-export(String,FILE) var Next_Scene_Path:String
+export(String,FILE,"*.tscn") var Next_Scene_Path:String
 
 onready var lable:Label = $"%Label"
 onready var timer: = $Timer
