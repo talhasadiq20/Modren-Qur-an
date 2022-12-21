@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Prefab/M_P_Test.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Screens/Allah_Name_Test.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Prefab/WorldEnvironment.tscn" type="PackedScene" id=3]
 
 [node name="Test Area" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="Question" parent="Question_Area/VBoxContainer" index="0"]
+margin_bottom = 338.0
+
+[node name="Dis" parent="Question_Area/VBoxContainer" index="1"]
+margin_top = 342.0
+margin_bottom = 449.0
+
 [node name="Test_Over" parent="." index="5"]
 Last_Sceen = "res://Assets/Screens/Names_Menu.tscn"
+
+[node name="WorldEnvironment" parent="." index="8" instance=ExtResource( 3 )]
 
 [connection signal="Test_Ended" from="." to="." method="_on_TestEnded"]

@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Qur'an/Names/Names.gd"
 }, {
+"base": "TextureRect",
+"class": "Arabic_Language_Level",
+"language": "GDScript",
+"path": "res://Assets/Prefab/Learning_Arabic_UI.gd"
+}, {
 "base": "AudioStreamPlayer",
 "class": "TextToSpeech",
 "language": "GDScript",
@@ -31,6 +36,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Allahs_Name": "",
+"Arabic_Language_Level": "",
 "TextToSpeech": "",
 "TextToSpeech2D": "",
 "TextToSpeech3D": ""
@@ -44,6 +50,10 @@ config/use_custom_user_dir=true
 boot_splash/bg_color=Color( 0.168627, 0.176471, 0.313726, 1 )
 config/icon="res://Resources/UI/Book.png"
 config/quit_on_go_back=false
+
+[audio]
+
+default_bus_layout=""
 
 [autoload]
 
@@ -112,5 +122,7 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 threads/thread_model=2
+quality/lightmapping/use_bicubic_sampling.mobile=true
 environment/default_clear_color=Color( 0.168627, 0.176471, 0.313726, 1 )
-environment/default_environment="res://default_env.tres"
+quality/depth/hdr.mobile=true
+environment/default_environment="res://Assets/Prefab/environment.tres"

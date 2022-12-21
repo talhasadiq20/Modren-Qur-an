@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Resources/UI/learning_Language.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=2]
@@ -11,6 +11,21 @@
 [ext_resource path="res://Resources/UI/learned_Languge_Progress_100.png" type="Texture" id=9]
 [ext_resource path="res://Resources/UI/learned_Languge_Progress_0.png" type="Texture" id=10]
 [ext_resource path="res://Resources/Fonts/English_T.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://Resources/UI/Speed_Review.png" type="Texture" id=12]
+[ext_resource path="res://Resources/UI/clock_Progress.png" type="Texture" id=13]
+[ext_resource path="res://Resources/UI/Clock_Outside.png" type="Texture" id=14]
+[ext_resource path="res://Resources/UI/Clock_body.png" type="Texture" id=15]
+[ext_resource path="res://Resources/UI/clock_Needle.png" type="Texture" id=16]
+[ext_resource path="res://Resources/UI/Pencil_Clicked.png" type="Texture" id=17]
+[ext_resource path="res://Resources/UI/Full_Review.png" type="Texture" id=18]
+[ext_resource path="res://Resources/UI/Note_Progress_Circle_done.png" type="Texture" id=19]
+[ext_resource path="res://Resources/UI/Clasic_Review.png" type="Texture" id=20]
+
+[sub_resource type="DynamicFont" id=2]
+size = 58
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -19,6 +34,383 @@ use_mipmaps = true
 use_filter = true
 extra_spacing_char = 10
 font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Speed"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Progress:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 100.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Needle:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pen:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureProgress:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 100.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Speed"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pen:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureProgress:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 100.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Speed_Test_btn:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Speed_Test_btn:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -195.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Speed_Test_btn:margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -221.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Speed_Test_btn/Label:margin_left")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -380 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Classic_Test_btn:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Reset_Test_btn:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Reset_Test_btn:margin_left")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -195.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Reset_Test_btn:margin_top")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -228.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Classic_Test_btn:margin_left")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -195.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Classic_Test_btn:margin_top")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -221.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Reset_Test_btn/ColorRect:margin_right")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Show"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Speed_Test_btn:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Speed_Test_btn:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -195.0, -20.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Speed_Test_btn:margin_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -221.0, 70.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Speed_Test_btn/Label:margin_left")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -380.0, -380.0, 20.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Classic_Test_btn:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Classic_Test_btn:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -195, -20.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Classic_Test_btn:margin_top")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -221, -510.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Classic_Test_btn/Label:margin_left")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -400.0, -400, 20.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Reset_Test_btn:margin_left")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -195, 134.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Reset_Test_btn:margin_top")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -228, -228.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Reset_Test_btn:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Reset_Test_btn/Label:margin_left")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -400.0, -400, 20.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Reset_Test_btn/ColorRect:margin_right")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 800.0 ]
+}
 
 [node name="Learning" type="TextureRect"]
 anchor_right = 0.981481
@@ -48,9 +440,10 @@ __meta__ = {
 [node name="Title" type="Label" parent="Lesson_Name"]
 unique_name_in_owner = true
 margin_right = 560.0
-margin_bottom = 217.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 2 )
 text = "Arabic Language"
 valign = 1
 autowrap = true
@@ -66,11 +459,12 @@ color = Color( 0.823529, 0.890196, 0.933333, 1 )
 
 [node name="Details" type="Label" parent="Lesson_Name"]
 unique_name_in_owner = true
-margin_top = 221.0
+margin_top = 74.0
 margin_right = 560.0
 margin_bottom = 350.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0.82, 0.89, 0.93, 0.5 )
 text = "Details"
@@ -148,8 +542,297 @@ text = "001"
 align = 1
 valign = 1
 
-[node name="Btn" type="TextureButton" parent="Back Dia/Center"]
+[node name="Quick test" type="Control" parent="Back Dia"]
+unique_name_in_owner = true
+show_behind_parent = true
+anchor_left = 0.065
+anchor_top = 0.004
+anchor_right = 0.93
+anchor_bottom = 0.586
+margin_right = 3.05176e-05
+margin_bottom = -3.05176e-05
+rect_rotation = -180.0
+rect_pivot_offset = Vector2( 199.815, 226.107 )
+theme = ExtResource( 3 )
+
+[node name="Speed_Test_btn" type="TextureButton" parent="Back Dia/Quick test"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -221.0
+margin_right = 195.0
+margin_bottom = 221.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 195, 221 )
+disabled = true
+texture_normal = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="Back Dia/Quick test/Speed_Test_btn"]
+show_behind_parent = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -380.0
+margin_top = -36.5
+margin_bottom = 36.5
+custom_colors/font_color = Color( 0.945098, 0.329412, 0.329412, 1 )
+text = "Speed Review"
+
+[node name="Control" type="Control" parent="Back Dia/Quick test/Speed_Test_btn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+rect_scale = Vector2( 2, 2 )
+
+[node name="Shadow" type="TextureRect" parent="Back Dia/Quick test/Speed_Test_btn/Control"]
+self_modulate = Color( 0.945098, 0.329412, 0.329412, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 3, 57 )
+texture = ExtResource( 14 )
+
+[node name="Body" type="TextureRect" parent="Back Dia/Quick test/Speed_Test_btn/Control"]
+self_modulate = Color( 0.945098, 0.329412, 0.329412, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.5
+margin_top = -67.5
+margin_right = 67.5
+margin_bottom = 67.5
+rect_pivot_offset = Vector2( 3, 57 )
+texture = ExtResource( 15 )
+
+[node name="Progress" type="TextureProgress" parent="Back Dia/Quick test/Speed_Test_btn/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.5
+margin_top = -67.5
+margin_right = 67.5
+margin_bottom = 67.5
+value = 100.0
+texture_progress = ExtResource( 13 )
+fill_mode = 4
+
+[node name="Needle" type="TextureRect" parent="Back Dia/Quick test/Speed_Test_btn/Control"]
+self_modulate = Color( 0.945098, 0.329412, 0.329412, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -3.0
+margin_top = -56.0
+margin_right = 3.0
+rect_rotation = 360.0
+rect_pivot_offset = Vector2( 3, 57 )
+texture = ExtResource( 16 )
+
+[node name="Speed_Anim" type="AnimationPlayer" parent="Back Dia/Quick test/Speed_Test_btn/Control"]
+autoplay = "Speed"
+anims/Speed = SubResource( 3 )
+
+[node name="Classic_Test_btn" type="TextureButton" parent="Back Dia/Quick test"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -221.0
+margin_right = 195.0
+margin_bottom = -100.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 195, 221 )
+disabled = true
+texture_normal = ExtResource( 18 )
+
+[node name="Label" type="Label" parent="Back Dia/Quick test/Classic_Test_btn"]
+show_behind_parent = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -36.5
+margin_bottom = 36.5
+custom_colors/font_color = Color( 0.329412, 0.913725, 0.564706, 1 )
+text = "Classic Review"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="Back Dia/Quick test/Classic_Test_btn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+rect_scale = Vector2( 2, 2 )
+
+[node name="Shadow" type="TextureRect" parent="Back Dia/Quick test/Classic_Test_btn/Control"]
+self_modulate = Color( 0.945098, 0.329412, 0.329412, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 3, 57 )
+texture = ExtResource( 14 )
+
+[node name="Body" type="TextureRect" parent="Back Dia/Quick test/Classic_Test_btn/Control"]
+self_modulate = Color( 0.945098, 0.329412, 0.329412, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.5
+margin_top = -67.5
+margin_right = 67.5
+margin_bottom = 67.5
+rect_pivot_offset = Vector2( 3, 57 )
+texture = ExtResource( 15 )
+
+[node name="Pen" type="TextureRect" parent="Back Dia/Quick test/Classic_Test_btn/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.0
+margin_top = -35.0
+margin_right = 35.0
+margin_bottom = 35.0
+rect_rotation = 360.0
+rect_pivot_offset = Vector2( 35, 35 )
+texture = ExtResource( 17 )
+
+[node name="TextureProgress" type="TextureProgress" parent="Back Dia/Quick test/Classic_Test_btn/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = -60.0
+margin_right = 60.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 30, 30 )
+value = 100.0
+texture_progress = ExtResource( 19 )
+fill_mode = 4
+tint_progress = Color( 0.329412, 1, 0.564706, 1 )
+radial_initial_angle = 227.0
+
+[node name="Classic_Anim" type="AnimationPlayer" parent="Back Dia/Quick test/Classic_Test_btn/Control"]
+autoplay = "Speed"
+anims/RESET = SubResource( 6 )
+anims/Speed = SubResource( 7 )
+
+[node name="Reset_Test_btn" type="TextureButton" parent="Back Dia/Quick test"]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -228.0
+margin_bottom = -100.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 195, 221 )
+disabled = true
+texture_normal = ExtResource( 20 )
+
+[node name="ColorRect" type="ColorRect" parent="Back Dia/Quick test/Reset_Test_btn"]
+show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0.168627, 0.176471, 0.313726, 1 )
 
-[connection signal="button_up" from="Back Dia/Center/Btn" to="." method="_on_Btn_up"]
+[node name="Label" type="Label" parent="Back Dia/Quick test/Reset_Test_btn"]
+show_behind_parent = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -36.5
+margin_bottom = 36.5
+custom_colors/font_color = Color( 0.329412, 0.490196, 0.909804, 1 )
+text = "Reset Progress"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="Back Dia/Quick test/Reset_Test_btn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+rect_scale = Vector2( 2, 2 )
+
+[node name="Shadow" type="TextureRect" parent="Back Dia/Quick test/Reset_Test_btn/Control"]
+self_modulate = Color( 0.945098, 0.329412, 0.329412, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -75.0
+margin_right = 75.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 3, 57 )
+texture = ExtResource( 14 )
+
+[node name="TextureProgress" type="TextureProgress" parent="Back Dia/Quick test/Reset_Test_btn/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = -60.0
+margin_right = 60.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 30, 30 )
+value = 75.0
+texture_progress = ExtResource( 19 )
+fill_mode = 4
+tint_progress = Color( 0.329412, 0.490196, 0.909804, 1 )
+radial_initial_angle = 180.0
+
+[node name="QuickTestAnim" type="AnimationPlayer" parent="Back Dia/Quick test"]
+unique_name_in_owner = true
+autoplay = "RESET"
+reset_on_save = false
+playback_speed = 2.0
+anims/RESET = SubResource( 4 )
+anims/Show = SubResource( 5 )
+
+[node name="Main_Btn" type="TextureButton" parent="."]
+unique_name_in_owner = true
+anchor_left = 0.025
+anchor_top = 0.42
+anchor_right = 0.414
+anchor_bottom = 0.974
+action_mode = 0
+
+[node name="HoldTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 4.0
+one_shot = true
+
+[connection signal="button_down" from="Back Dia/Quick test/Reset_Test_btn" to="." method="_on_Reset_Test_btn_down"]
+[connection signal="button_down" from="Main_Btn" to="." method="_on_Btn_button_hold_down"]
+[connection signal="button_up" from="Main_Btn" to="." method="_on_Btn_up"]
+[connection signal="timeout" from="HoldTimer" to="." method="_on_HoldTimer_timeout"]

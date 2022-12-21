@@ -1,12 +1,14 @@
 extends Control
 
 export(NodePath) var Allah_Names
+export(NodePath) var Learn_Arabic
 export(NodePath) var Current_Dock_Btn
 
 onready var Particals:Array = [$Star_Particals,$Star_Particals2]
 
 func _ready():
 	get_node(Allah_Names).Update_Progress(ProgessData.Allah_Name_Progress)
+	get_node(Learn_Arabic).Update_Progress(ProgessData.Arabic_Language_Progress)
 # warning-ignore:integer_division
 	var Allah_Names_Level:int = Get_Over_All_Level(Save.Names_Level) / ProgessData.Total_Names
 	get_node(Allah_Names).Set_Level(Allah_Names_Level)

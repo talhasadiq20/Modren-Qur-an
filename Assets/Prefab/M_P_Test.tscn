@@ -151,16 +151,18 @@ script = ExtResource( 8 )
 
 [node name="Question_Area" type="ColorRect" parent="."]
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -1600.0
+anchor_bottom = 0.298246
 color = Color( 0.0745098, 0.105882, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="BG_T" type="TextureRect" parent="Question_Area"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -136.0
-margin_bottom = 247.0
+margin_bottom = 192.0
 rect_scale = Vector2( 1, -1 )
 rect_pivot_offset = Vector2( 540, 231 )
 texture = ExtResource( 1 )

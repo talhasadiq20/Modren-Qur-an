@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Screens/Name_side_Panal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Prefab/MenuButton.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Prefab/Done_Button.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Prefab/M_Note_Btn.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Prefab/Notes.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Prefab/WorldEnvironment.tscn" type="PackedScene" id=18]
 
 [sub_resource type="DynamicFont" id=4]
 size = 45
@@ -300,6 +301,8 @@ autoplay = "Load"
 anims/Load = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 anims/Show_Notes = SubResource( 5 )
+
+[node name="WorldEnvironment" parent="." instance=ExtResource( 18 )]
 
 [connection signal="Clicked_Like_btn" from="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer/Like_btn" to="." method="_on_Clicked_Like_btn"]
 [connection signal="Clicked" from="Detail_Area/ScrollContainer/VBoxContainer/HBoxContainer/Done_Button" to="." method="_on_Done_Button_Clicked"]
