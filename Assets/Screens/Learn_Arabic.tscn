@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Prefab/Learning_Arabic_UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Prefab/Detail_Theme.tres" type="Theme" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Prefab/BackButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Screens/Scroll_Focusr.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Prefab/WorldEnvironment.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Prefab/Arabic_Review.tscn" type="PackedScene" id=7]
 
 [node name="Learn_Arabic" type="Control"]
 anchor_right = 1.0
@@ -27,14 +28,12 @@ anchor_bottom = 1.0
 theme = ExtResource( 2 )
 follow_focus = true
 scroll_horizontal_enabled = false
-scroll_vertical = 100
 scroll_deadzone = -1
 script = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-margin_top = -100.0
 margin_right = 1060.0
-margin_bottom = 4532.0
+margin_bottom = 1185.0
 input_pass_on_modal_close_click = false
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -42,50 +41,63 @@ custom_constants/separation = -6
 alignment = 2
 script = ExtResource( 3 )
 
+[node name="Review_02" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
+visible = false
+Review_btn = null
+
 [node name="Learning6" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 408.0
+margin_right = 1060.0
+margin_bottom = 1185.0
+
+[node name="Learning5" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1179.0
+margin_right = 1060.0
+margin_bottom = 1956.0
+
+[node name="Learning4" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1950.0
+margin_right = 1060.0
+margin_bottom = 2727.0
+
+[node name="Learning3" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 2721.0
+margin_right = 1060.0
+margin_bottom = 3498.0
+
+[node name="Learning2" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1060.0
 margin_bottom = 777.0
 
-[node name="Learning5" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 771.0
-margin_right = 1060.0
-margin_bottom = 1548.0
-
-[node name="Learning4" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 1542.0
-margin_right = 1060.0
-margin_bottom = 2319.0
-
-[node name="Learning3" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 2313.0
-margin_right = 1060.0
-margin_bottom = 3090.0
-
-[node name="Learning2" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 3084.0
-margin_right = 1060.0
-margin_bottom = 3861.0
-
 [node name="Arabic Grammar" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 3855.0
 margin_right = 1060.0
-margin_bottom = 4632.0
+margin_bottom = 777.0
 Learn_Status = 2
 Title = "Word Categories"
 Detail = "Ism, Fi'l, Harf"
 Next_Scene = "res://Assets/Arabic_Language_Levels/001/Level_Selector.tscn"
+
+[node name="Review_01" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 7 )]
+margin_top = 771.0
+margin_bottom = 1185.0
+Review_Folder = "res://Assets/Arabic_Language_Levels/001_Reviews/"
 
 [node name="BackButton" parent="." instance=ExtResource( 4 )]
 scene = "res://Assets/Screens/Home_screen.tscn"

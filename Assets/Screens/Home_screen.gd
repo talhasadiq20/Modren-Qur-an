@@ -12,6 +12,7 @@ func _ready():
 # warning-ignore:integer_division
 	var Allah_Names_Level:int = Get_Over_All_Level(Save.Names_Level) / ProgessData.Total_Names
 	get_node(Allah_Names).Set_Level(Allah_Names_Level)
+	get_node(Learn_Arabic).Set_Level(0)
 	Update_Partical_Progress()
 
 func Update_Partical_Progress():

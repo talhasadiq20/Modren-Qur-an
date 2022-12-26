@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Prefab/Learning_Arabic_UI.gd"
 }, {
+"base": "TextureRect",
+"class": "Arabic_Language_Review",
+"language": "GDScript",
+"path": "res://Assets/Prefab/Arabic_Review.gd"
+}, {
 "base": "AudioStreamPlayer",
 "class": "TextToSpeech",
 "language": "GDScript",
@@ -37,6 +42,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Allahs_Name": "",
 "Arabic_Language_Level": "",
+"Arabic_Language_Review": "",
 "TextToSpeech": "",
 "TextToSpeech2D": "",
 "TextToSpeech3D": ""

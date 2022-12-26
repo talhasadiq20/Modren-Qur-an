@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Resources/UI/Chapter_UnLock.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Prefab/Arabic_Review.gd" type="Script" id=3]
+[ext_resource path="res://Resources/UI/Chapter_Lock.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Prefab/Lock_UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Prefab/Review_Baner_Btn.tscn" type="PackedScene" id=6]
+
+[node name="Review_01" type="TextureRect"]
+margin_right = 1060.0
+margin_bottom = 414.0
+theme = ExtResource( 1 )
+texture = ExtResource( 4 )
+stretch_mode = 1
+script = ExtResource( 3 )
+Images = [ ExtResource( 4 ), ExtResource( 2 ) ]
+Review_btn = ExtResource( 6 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.03
+anchor_top = 0.576
+anchor_right = 0.97
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+margin_top = 34.0
+margin_right = 996.0
+margin_bottom = 141.0
+size_flags_horizontal = 3
+text = "Chapter 000"
+align = 1
+valign = 1
+
+[node name="Lock" parent="." instance=ExtResource( 5 )]
+unique_name_in_owner = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -161.0
+margin_top = -175.0
+margin_right = -13.0
+margin_bottom = -3.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 74, 86 )
+size_flags_horizontal = 11

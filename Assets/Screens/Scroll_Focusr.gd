@@ -8,4 +8,5 @@ func _on_Learning_Focus(num):
 
 func _on_Clicked_Level_btn():
 	for child in $VBoxContainer.get_children():
-		child.Hide_Hover()
+		if child is Arabic_Language_Level:
+			child.Hide_Hover()

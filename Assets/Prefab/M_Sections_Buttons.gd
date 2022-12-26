@@ -1,6 +1,7 @@
+tool
 extends TextureButton
 
-export(String) var Title:String = "text"
+export(String) var Title:String = ""
 export(String,FILE,"*.tscn") var Next_Scene_Path:String
 
 onready var lable:Label = $"%Label"
@@ -10,6 +11,13 @@ onready var Progress = $"%Progress"
 onready var Badge: = $SmallBadge
 
 var Showing_Details:bool = false
+
+func _get_configuration_warning() -> String:
+	if Title == "":
+		return "Enter Lable"
+	if not Next_Scene_Path:
+		return "Select Next Scene"
+	return ""
 
 func _ready():
 	Type_Lable()
