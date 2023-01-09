@@ -16,6 +16,7 @@ var Total_Arabic_Levels:int = 6 setget Set_Total_Arabic_Levels
 const Total_Suras:int = 114
 const Total_Hadis:int = 0
 
+
 func Set_Total_Arabic_Levels(val:int)->void:
 	if val == Total_Arabic_Levels: return
 	Total_Arabic_Levels = val

@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Fonts/English_T.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/Awards/LVL4_S.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Prefab/M_Life.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Life_Lost"
+length = 0.5
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TextureRect:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, -50, 0.1, 50, 0.816681, -0.1, -50, 0.1, 50, 0, -0.1, -50, 0.1, 50 ),
+"times": PoolRealArray( 0, 0.25, 0.501 )
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TextureRect:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="Life" type="Label"]
+unique_name_in_owner = true
+anchor_left = 0.95
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.05
+margin_left = -67.0
+margin_bottom = 144.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_colors/font_color = Color( 0.823529, 0.890196, 0.933333, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "9"
+align = 2
+valign = 1
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_bottom = 1.0
+margin_left = -166.0
+rect_pivot_offset = Vector2( 83, 144 )
+texture = ExtResource( 2 )
+stretch_mode = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/Life_Lost = SubResource( 3 )
+anims/RESET = SubResource( 4 )

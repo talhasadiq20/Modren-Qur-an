@@ -4,7 +4,7 @@ class_name Arabic_Language_Level
 export(int,0,2) var Learn_Status:int = 0
 export(String) var Title:String = "Enter Title"
 export(String) var Detail:String = "Enter Details"
-export(String,FILE,"*.tscn") var Next_Scene:String = ""
+export(Array,String,FILE,"*.tscn") var Next_Scene:Array
 
 var Progress:int = 0 setget Set_Learn_Stat
 var Level:int = 0 setget Set_Level
@@ -76,8 +76,9 @@ func _on_Btn_up():
 		return
 	if Level == 2:
 		return
-	if Next_Scene != "":
-		SceneLoader.Fake_Load(Next_Scene)
+	if not Next_Scene:
+		return
+	SceneLoader.Fake_Load(Next_Scene[Progress])
 
 func _on_Btn_button_hold_down():
 	Hold_Timer_UI.start(1)

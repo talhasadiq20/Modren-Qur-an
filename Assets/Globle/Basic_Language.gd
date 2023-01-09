@@ -39,14 +39,14 @@ func Get_Next() ->String:
 func Get_Time()->String:
 	match GlobleSettings.Language:
 		GlobleSettings.lang.en:
-			return "Time".capitalize()
-	return "Time".capitalize()
+			return "Speed".capitalize()
+	return "Speed".capitalize()
 
 func Get_Percentage()->String:
 	match GlobleSettings.Language:
 		GlobleSettings.lang.en:
-			return "Accuracy".capitalize()
-	return "Accuracy".capitalize()
+			return "Aim".capitalize()
+	return "Aim".capitalize()
 
 func Get_Try_Again()->String:
 	match GlobleSettings.Language:

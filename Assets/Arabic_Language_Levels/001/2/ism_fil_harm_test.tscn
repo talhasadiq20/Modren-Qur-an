@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Prefab/M_Test.tscn" type="PackedScene" id=1]
+
+[node name="1_ism_fil_harm_test" instance=ExtResource( 1 )]
+Questions = {
+"Select 'FI'L' from the following": [ "Prepared", "Tidied", "Stood", "Eat", "Drove" ],
+"Select 'HARF' from the following": [ "for", "on", "at", "a", "is", "be" ],
+"Select 'ISM' from the following": [ "Teacher", "Campus", "Blinders", "Early", "Long" ]
+}
+
+[node name="Lessons" parent="." index="1"]
+unique_name_in_owner = true
+
+[node name="Lecture_Num" parent="." index="2"]
+text = "1"
+
+[node name="Test_Block" parent="VBoxContainer" index="1"]
+unique_name_in_owner = true
+
+[node name="M_Next_btn2" parent="HBoxContainer" index="0"]
+unique_name_in_owner = true
+
+[node name="Test_Over" parent="." index="9"]
+unique_name_in_owner = true
+Last_Sceen = "res://Assets/Screens/Learn_Arabic.tscn"
+
+[node name="Quit_Scene" parent="." index="11"]
+Return_Scene = "res://Assets/Screens/Learn_Arabic.tscn"

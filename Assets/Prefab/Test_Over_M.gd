@@ -30,7 +30,7 @@ func convert_sec2min(val:int)->String:
 		var sec_str = str(sec) if sec >=10 else "0" + str(sec)
 		return mins_str+":"+sec_str
 
-func Set_Score(right_answers:int,total_questions):
+func Set_Score(right_answers:int,total_questions)->bool:
 # warning-ignore:narrowing_conversion
 	var per:int = round((float(right_answers) / float(total_questions)) * 100)
 	Percentage_Box.Heading = BasicLanguage.Get_Percentage()
@@ -38,9 +38,11 @@ func Set_Score(right_answers:int,total_questions):
 	if per > 50:
 		Main_Header.text = BasicLanguage.Get_Congragulations()
 		Endbtn.self_modulate = GlobleSettings.Get_Right_Color()
+		return true
 	else:
 		Main_Header.text = BasicLanguage.Get_Try_Again()
 		Endbtn.self_modulate = GlobleSettings.Get_Wrong_Color()
+		return false
 
 func _get_configuration_warning():
 	return "Select Last Scene" if not Last_Sceen else ""

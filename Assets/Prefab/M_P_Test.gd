@@ -9,7 +9,6 @@ onready var Question_Lable: = $"%Question"
 onready var Dis_Lable: = $"%Dis"
 onready var Next_btn: = $"%NextBtn"
 onready var End_Scene: = $"%Test_Over"
-onready var Quit_Scene: = $Quit_Scene
 onready var Test_Time: = $"%Test_Time"
 onready var Anim: = $AnimationPlayer
 
@@ -68,7 +67,6 @@ func _on_Answered(Is_Correct):
 	Next_Button_Show(Is_Correct)
 
 func Set_Questions_List(dic:Dictionary) ->void:
-	_on_NoBtn_up()
 	Questions = dic
 	for i in dic.size():
 		Score.append(0)
@@ -98,13 +96,6 @@ func _on_Next_button_down():
 	timer.start(0.5)
 	yield(timer,"timeout")
 	Next_Question()
-
-func _on_NoBtn_up():
-	Quit_Scene.visible = false
-
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
-		Quit_Scene.visible = true
 
 func Show_Results():
 	emit_signal("Test_Ended")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/UI/Ground_Arc.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Prefab/Arabic_Theme.tres" type="Theme" id=2]
@@ -12,9 +12,7 @@
 [ext_resource path="res://Resources/UI/Test_btn_Fill.png" type="Texture" id=10]
 [ext_resource path="res://Resources/UI/Test_btn_Empty.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Prefab/Main_Theme.tres" type="Theme" id=12]
-[ext_resource path="res://Assets/Prefab/Test_Quit.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Prefab/NoBtn.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Prefab/YesBtn.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Prefab/Quit_Scene.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Prefab/Test_Over_M.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Prefab/NextBtn.gd" type="Script" id=18]
 
@@ -209,7 +207,7 @@ alignment = 1
 [node name="Question" type="Label" parent="Question_Area/VBoxContainer"]
 unique_name_in_owner = true
 margin_right = 972.0
-margin_bottom = 337.0
+margin_bottom = 338.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 theme = ExtResource( 2 )
@@ -220,9 +218,9 @@ autowrap = true
 
 [node name="Dis" type="Label" parent="Question_Area/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 341.0
+margin_top = 342.0
 margin_right = 972.0
-margin_bottom = 448.0
+margin_bottom = 449.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
 theme = ExtResource( 12 )
@@ -353,40 +351,8 @@ reset_on_save = false
 playback_speed = 2.0
 anims/click = SubResource( 1 )
 
-[node name="Quit_Scene" type="ColorRect" parent="."]
+[node name="Quit_Scene" parent="." instance=ExtResource( 13 )]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.0705882, 0.109804, 0.160784, 0.905882 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Quit_Scene"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 12 )
-custom_constants/separation = 100
-alignment = 1
-
-[node name="Label" type="Label" parent="Quit_Scene/VBoxContainer"]
-margin_top = 881.0
-margin_right = 1080.0
-margin_bottom = 1208.0
-text = "Are You Sure?
-You will Loss Your Progress"
-align = 1
-valign = 1
-autowrap = true
-script = ExtResource( 14 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Quit_Scene/VBoxContainer"]
-margin_top = 1308.0
-margin_right = 1080.0
-margin_bottom = 1398.0
-theme = ExtResource( 6 )
-alignment = 1
-
-[node name="YesBtn" parent="Quit_Scene/VBoxContainer/HBoxContainer" instance=ExtResource( 16 )]
-
-[node name="NoBtn" parent="Quit_Scene/VBoxContainer/HBoxContainer" instance=ExtResource( 15 )]
 
 [node name="Test_Over" parent="." instance=ExtResource( 17 )]
 unique_name_in_owner = true
